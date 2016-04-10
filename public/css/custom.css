@@ -1,0 +1,68 @@
+img.image{
+    max-width: 480px;
+}
+img.thumbnail{
+    max-width: 100% !important;
+}
+input[type=checkbox]{
+    -webkit-appearance: checkbox;
+    -moz-appearance:    checkbox;
+    appearance:         checkbox;
+}
+
+.show .form-add,.show #integrations{
+    display: block;
+    overflow: hidden;
+}
+.display-block{
+    display: block;
+}
+.event-description{
+    width : 100%;
+    border : 1px solid #ccc;
+}
+.parent{
+    position: absolute;
+}
+.core{
+    position: fixed;
+}
+
+.core,
+.parent 
+{
+    background-color: #fff;
+    box-shadow: -2px -1px 15px 0 #aaa;
+    left: 35%;
+    margin: 20px;
+    padding: 20px;
+    top: 75px;
+    min-width: 420px;
+    overflow-y: hidden;
+}
+
+.core input,
+.parent input
+{
+    width: 100%;
+    height : 40px;
+    margin: 15px 0;
+    padding: 0 20px;
+    background-color: #fff;
+    border: 1px solid #dae3ea;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    color: #21293f;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 300;
+    resize: none;
+    transition: all 0.3s ease 0s;
+}
+
+body.modal-open{
+    overflow: hidden;
+}
+table tr td {
+    background-color: #FFF;
+}

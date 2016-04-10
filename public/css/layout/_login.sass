@@ -1,0 +1,73 @@
+.lonely-logo
+    display: block
+    margin: 170px 0 40px 0
+    text-align: center
+
+.lonely-logo a
+    width: 174px
+    height: 30px
+    background: url(../images/flysolo-logo.png) left top no-repeat
+    background-size: 174px 30px
+    text-indent: -10001px
+    display: inline-block
+    
+.form-access
+    width: 400px
+    margin: 0 auto
+
+.form-access form
+    @extend %box
+    padding: 40px
+
+.form-access form legend
+    font-size: $h1-title-size
+    color: $prima-blue
+    font-weight: $regular
+    margin-bottom: 20px
+    display: block
+
+.form-access form .description
+    margin-bottom: 20px
+
+.form-access form input
+    @extend %in-modal
+    margin-top: 10px
+
+.form-access form .forgot a
+    font-size: 12px
+    float: right
+    color: $blue
+    margin: 10px 0 0 0
+
+.form-access form button
+    float: none
+    width: 100%
+    margin-top: 20px
+    position: relative
+    &:before
+        @extend %icon-arrow-right
+        font-size: 16px
+        color: #FFF
+        position: absolute
+        right: 20px
+        top: 15px
+    
+.form-access .accountlink
+    font-size: 12px
+    margin-top: 10px
+    text-align: center
+
+.form-access .accountlink a
+    color: $blue
+    
+.form-access .or
+    margin: 20px 0
+    text-align: center
+
+.form-access .social-login li a
+    +btn-theme($blue, 48px, 0px 24px, 14px)
+    width: 100%
+
+.form-access .social-login li.google a
+    +btn-theme($pink, 48px, 0px 24px, 14px)
+    margin-top: 10px

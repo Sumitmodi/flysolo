@@ -1,0 +1,44 @@
+@each $font-face in "Flydings", "Montserrat"
+  $filepath: "../fonts/" + $font-face
+  @font-face
+    font-family: "#{$font-face}"
+    src: url($filepath + ".eot")
+    src: url($filepath + ".eot?#iefix") format('embedded-opentype'), url($filepath + ".woff") format('woff'), url($filepath + ".ttf") format('truetype'), url($filepath + ".svg#" + $font-face + "") format('svg')
+
+// Font weights
+$light: 300
+$regular: 400
+$thicker: 500 //for SkolaSans, use 500
+
+// Basic Text
+$basic-font-family: "Montserrat"
+$basic-font-size: 14px
+$basic-font-weight: $light
+$basic-font-height: 1.4
+
+//h1 Title
+$h1-title-size: 24px
+$h1-title-weight: $light
+
+//h2 Title
+$h2-title-size: 18px
+
+//h3 Title
+$h3-title-size: 14px
+
+//All Title
+$All-title-family: $basic-font-family
+$All-title-weight: $regular
+$All-title-height: $basic-font-height
+
+// Icon Font
+$icon-font-family: "Flydings"
+$icon-font-size: 16px
+
+// Support Small Text
+$small-text-family: $basic-font-family
+$small-text-size: 12px
+$small-text-weight: $light
+$small-text-color: $tertius-blue
+
+// Form Fonts

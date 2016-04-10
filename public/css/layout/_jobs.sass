@@ -1,0 +1,96 @@
+.jobs-list .job
+  @extend %box
+  width: 282px
+  height: 240px
+  display: inline
+  float: left
+  margin-right: 24px
+  margin-bottom: 24px
+  cursor: pointer
+  position: relative
+
+.jobs-list .job:nth-child(4n+0)
+  margin-right: 0px
+
+.jobs-list .job .job-logo
+  @extend %avatar
+  float: right
+
+.jobs-list .job h2
+  +font-size(24px)
+  font-weight: $thicker
+
+.jobs-list .job .last-update
+  color: $beta-blue
+  +font-size(12px)
+  margin-top: 100px
+  display: block
+
+.jobs-list .job .last-update strong
+  font-weight: $regular
+
+.jobs-list .job .participants li a
+  @extend %smalltext
+  @extend %avatar
+  width: 32px
+  height: 32px
+  float: left
+  margin-top: 16px
+  margin-right: 8px
+  line-height: 32px
+
+.jobs-list .job .action
+  visibility: hidden
+  position: absolute
+  width: 282px
+  height: 240px
+  padding: 20px
+  background-color: rgba(45, 54, 68, .9)
+  left: 0
+  top: 0
+  z-index: 2
+  +border-radius(4px)
+
+.jobs-list .job .action ul
+  float: right
+
+.jobs-list .job .action ul li
+  display: inline
+  opacity: 0.4
+  +transition(.3s)
+  margin-left: 16px
+
+.jobs-list .job .action ul li.archive a:before
+  @extend %icon-archive
+  color: #fff
+
+.jobs-list .job .action ul li.delete a:before
+  @extend %icon-trash
+  color: #fff
+
+.jobs-list .job .action ul li:hover
+  opacity: 0.9
+
+.jobs-list .job .action ul li a span
+  display: none
+
+.jobs-list .job .action a.open-job
+  background-color: transparent
+  +border-radius(4px)
+  color: #fff
+  font-weight: $regular
+  line-height: 48px
+  width: 122px
+  display: block
+  margin: 76px auto 0 auto
+  padding: 0 24px
+  border: 1px solid #fff
+  text-align: center
+  +transition(.3s)
+
+.jobs-list .job .action a.open-job:hover
+  background-color: $green
+  border-color: $green
+
+.jobs-list .job:hover .action
+  visibility: visible

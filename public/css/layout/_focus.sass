@@ -1,0 +1,62 @@
+.focus
+  width: 288px
+  float: left
+
+.focus li a
+  @extend %box
+  width: 288px
+  display: block
+  margin-bottom: 10px
+  position: relative
+  +transition(.3s)
+
+.focus li a:hover
+  border: 1px solid $blue
+
+.focus li.estimate a:before
+  @extend %posticon-focus
+  @extend %icon-cash
+  background-color: $estimate
+
+.focus li.calendar a:before
+  @extend %posticon-focus
+  @extend %icon-calendar
+  background-color: $calendar
+
+.focus li a .title
+  display: block
+  color: $prima-blue
+  font-weight: $regular
+  +font-size(14px)
+
+.focus li a .info
+  color: $beta-blue
+
+.focus li.estimate .status
+  width: 16px
+  height: 16px
+  +border-radius(3px)
+  text-indent: -10001px
+  display: block
+  right: 20px
+  top: 28px
+  position: absolute
+
+.focus li.estimate .status.waiting
+  background-color: $waiting
+
+.focus li.calendar .status
+  text-indent: -10001px
+  float: right
+
+.focus li.calendar .status:before
+  @extend %icon-circle-check
+  font-size: 18px
+  color: $tertius-blue
+  width: 18px
+  height: 18px
+  float: none
+  text-indent: 0
+  position: absolute
+  right: 20px
+  top: 28px

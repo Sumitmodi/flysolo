@@ -1,0 +1,13 @@
+doctype html
+html(ng-app="flysolo")
+    head
+        title= title
+        
+        link(rel="stylesheet" href="/css/font-awesome.min.css")
+        link(rel="stylesheet" href="/css/app.css")
+    body.flysolo
+        div
+            div#wrap(autoscroll='false' ui-view)
+        script(type="text/javascript")
+            |var lang = !{JSON.stringify(lang)};
+        include  ../common/footer

@@ -1,0 +1,36 @@
+//Generals
+%clearfix
+	&
+		*zoom: 1
+	&:before,
+	&:after
+		content: ""
+		display: table
+	&:after
+		clear: both
+
+//Box
+%box
+	background-color: #fff
+	border: 1px solid $quintus-blue
+	+border-radius(4px)
+	+box-shadow(0 1px 1px rgba(0,0,0,.04))
+	padding: 20px
+
+//User Avatar
+%avatar
+	+border-radius(90px)
+	width: 40px
+	height: 40px
+	background-color: $sextus-blue
+	text-align: center
+	font-weight: $regular
+	&:hover
+		-webkit-filter: grayscale(100%)
+		filter: grayscale(100%)
+
+//Small Text
+%smalltext
+	font-size: $small-text-size
+	font-weight: $small-text-weight
+	color: $small-text-color

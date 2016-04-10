@@ -1,0 +1,37 @@
+<header>
+    <div class="container">
+        <div id="logo"><a ui-sref="app.dashboard">FlySolo</a></div>
+        
+        <form name="qsearch" id="qsearch" autocomplete="off">
+            <fieldset>
+                <legend>Search</legend>
+                <input type="search" name="q" id="q" ng-model="query.q" ng-change="searchJob(query.q)"/>
+                <ul>
+                    <li ng-repeat="res in results">
+                        <a href="javascript:;" ng-click="openJob(res)">{{res.title}}</a>
+                    </li>
+                </ul>
+                <button type="submit">Search</button>
+            </fieldset>
+        </form>
+        
+        <nav id="menu">
+            <ul>
+                <li class="current"><a ui-sref="app.dashboard" ui-sref-active="active">Jobs</a></li>
+                <li class="alert"><a ui-sref="app.activities">Activities</a></li>
+                <li><a ui-sref="app.users">People</a></li>
+                <li><a ui-sref="app.help">Help</a></li>
+                <li><strong><a ui-sref="app.premium">Premium</a></strong></li>
+                <li id="header-alerts"><a href="">12</a></li>
+                <li id="menu-user">
+                    <div id="user-photo"></div>
+                    <ul class="popover">
+                        <li><a ui-sref="app.profile">Profile</a></li>
+                        <li><a href="upgrade.html">Upgrade plan</a></li>
+                        <li><a ui-sref="core.logout">Sign out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

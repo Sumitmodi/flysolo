@@ -1,0 +1,23 @@
+<div id="form-login" class="form-access">
+    <div class="lonely-logo"><a href="http://www.flysolo.co">FlySolo</a></div>
+    <form ng-submit="login(user)">
+        <fieldset>
+            <legend>Sign in</legend>
+            <p class="description">Hello! Welcome! <br /> Sign in to your account.</p>
+            <label class="label">
+                <input class="form-control" type="text" ng-model="user.username" placeholder="Email"/>
+            </label>
+            <label class="label">
+                <input class="form-control" type="password" ng-model="user.password" placeholder="Password"/>
+            </label>
+            <p class="forgot"><a href="">forgot password?</a></p>
+            <button type="submit">Get in</button>
+        </fieldset>
+        <p class="or">or</p>
+        <ul class="social-login">
+            <li class="dropbox"><a href="">Sign in with Dropbox</a></li>
+            <li class="google"><a href="">Sign in with Google</a></li>
+        </ul>
+    </form>
+    <p class="accountlink">Don’t have an account? <a ui-sref="core.register">Sign up</a></p>
+</div>

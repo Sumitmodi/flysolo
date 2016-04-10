@@ -1,0 +1,34 @@
+/* reset */
+/* line 65, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Web/Code/assets/styles/global/_reset.sass */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, textarea, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
+/* line 75, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Web/Code/assets/styles/global/_reset.sass */
+ol, ul {
+    list-style: none;
+}
+
+/* line 78, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Web/Code/assets/styles/global/_reset.sass */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* line 96, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Web/Code/assets/styles/global/_reset.sass */
+div, header, ul, li, ol, a, span, form, input, textarea, button, fieldset, legend, a:before, ::before {
+    box-sizing: border-box;
+}
+
+/* line 99, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Web/Code/assets/styles/global/_reset.sass */
+*:focus {
+    outline: 0;
+}
+
+/*# sourceMappingURL=_reset.css.map */

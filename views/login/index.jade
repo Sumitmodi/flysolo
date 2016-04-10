@@ -1,0 +1,15 @@
+extends ../common/head
+block content
+    script(type="text/javascript" src="scripts/login.js")
+    div.col-md-12(ng-scope ng-controller="LoginCtrl")
+        div.col-md-4
+        div.col-md-4
+            form.form-group(method="post" ng-submit="login(user)")
+                div.form-group
+                    label.col-md-2 Username
+                    input.form-control(name="username" ng-model="user.username" placeholder="Enter username" ng-required="true")
+                div.form-group
+                    label.col-md-2 Password
+                    input.form-control(name="password" ng-model="user.password" placeholder="Enter password" ng-required="true")
+                div.form-group
+                    button.btn.btn-success  Login

@@ -1,0 +1,590 @@
+//========================= base =========================
+
+%posticon
+	font-family: $icon-font-family
+	color: #fff
+	float: left
+	+border-radius(90px)
+	text-align: center
+	margin-right: 16px
+
+
+//========================= mixins =========================
+
+=icn-post($fontsize, $size, $padtop)
+    @extend %posticon
+    font-size: $fontsize
+    width: $size
+    height: $size
+    padding-top: $padtop
+
+    
+//========================= themes =========================
+
+%posticon-timeline
+	+icn-post($icon-font-family, 40px, 12px)
+%posticon-focus
+	+icn-post(13px, 32px, 9px)
+
+    
+//========================= extends =========================
+
+%iconfont
+	font-family: $icon-font-family
+	speak: none
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	line-height: 1
+
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+%icon-eye
+	@extend %iconfont
+	+icon-font(e000)
+
+%icon-paper-clip
+	@extend %iconfont
+	+icon-font(e001)
+
+%icon-mail
+	@extend %iconfont
+	+icon-font(e002)
+
+%icon-toggle
+	@extend %iconfont
+	+icon-font(e003)
+
+%icon-layout
+	@extend %iconfont
+	+icon-font(e004)
+
+%icon-link
+	@extend %iconfont
+	+icon-font(e005)
+
+%icon-bell
+	@extend %iconfont
+	+icon-font(e006)
+
+%icon-lock
+	@extend %iconfont
+	+icon-font(e007)
+
+%icon-unlock
+	@extend %iconfont
+	+icon-font(e008)
+
+%icon-ribbon
+	@extend %iconfont
+	+icon-font(e009)
+
+%icon-image
+	@extend %iconfont
+	+icon-font(e010)
+
+%icon-signal
+	@extend %iconfont
+	+icon-font(e011)
+
+%icon-target
+	@extend %iconfont
+	+icon-font(e012)
+
+%icon-clipboard
+	@extend %iconfont
+	+icon-font(e013)
+
+%icon-clock
+	@extend %iconfont
+	+icon-font(e014)
+
+%icon-watch
+	@extend %iconfont
+	+icon-font(e015)
+
+%icon-air-play
+	@extend %iconfont
+	+icon-font(e016)
+
+%icon-camera
+	@extend %iconfont
+	+icon-font(e017)
+
+%icon-video
+	@extend %iconfont
+	+icon-font(e018)
+
+%icon-disc
+	@extend %iconfont
+	+icon-font(e019)
+
+%icon-printer
+	@extend %iconfont
+	+icon-font(e020)
+
+%icon-monitor
+	@extend %iconfont
+	+icon-font(e021)
+
+%icon-server
+	@extend %iconfont
+	+icon-font(e022)
+
+%icon-cog
+	@extend %iconfont
+	+icon-font(e023)
+
+%icon-heart
+	@extend %iconfont
+	+icon-font(e024)
+
+%icon-paragraph
+	@extend %iconfont
+	+icon-font(e025)
+
+%icon-align-justify
+	@extend %iconfont
+	+icon-font(e026)
+
+%icon-align-left
+	@extend %iconfont
+	+icon-font(e027)
+
+%icon-align-center
+	@extend %iconfont
+	+icon-font(e028)
+
+%icon-align-right
+	@extend %iconfont
+	+icon-font(e029)
+
+%icon-book
+	@extend %iconfont
+	+icon-font(e030)
+
+%icon-layers
+	@extend %iconfont
+	+icon-font(e031)
+
+%icon-stack
+	@extend %iconfont
+	+icon-font(e032)
+
+%icon-stack-2
+	@extend %iconfont
+	+icon-font(e033)
+
+%icon-paper
+	@extend %iconfont
+	+icon-font(e034)
+
+%icon-paper-stack
+	@extend %iconfont
+	+icon-font(e035)
+
+%icon-search
+	@extend %iconfont
+	+icon-font(e036)
+
+%icon-zoom-in
+	@extend %iconfont
+	+icon-font(e037)
+
+%icon-zoom-out
+	@extend %iconfont
+	+icon-font(e038)
+
+%icon-reply
+	@extend %iconfont
+	+icon-font(e039)
+
+%icon-circle-plus
+	@extend %iconfont
+	+icon-font(e040)
+
+%icon-circle-minus
+	@extend %iconfont
+	+icon-font(e041)
+
+%icon-circle-check
+	@extend %iconfont
+	+icon-font(e042)
+
+%icon-circle-cross
+	@extend %iconfont
+	+icon-font(e043)
+
+%icon-square-plus
+	@extend %iconfont
+	+icon-font(e044)
+
+%icon-square-minus
+	@extend %iconfont
+	+icon-font(e045)
+
+%icon-square-check
+	@extend %iconfont
+	+icon-font(e046)
+
+%icon-square-cross
+	@extend %iconfont
+	+icon-font(e047)
+
+%icon-microphone
+	@extend %iconfont
+	+icon-font(e048)
+
+%icon-record
+	@extend %iconfont
+	+icon-font(e049)
+
+%icon-skip-back
+	@extend %iconfont
+	+icon-font(e050)
+
+%icon-rewind
+	@extend %iconfont
+	+icon-font(e051)
+
+%icon-play
+	@extend %iconfont
+	+icon-font(e052)
+
+%icon-pause
+	@extend %iconfont
+	+icon-font(e053)
+
+%icon-stop
+	@extend %iconfont
+	+icon-font(e054)
+
+%icon-fast-forward
+	@extend %iconfont
+	+icon-font(e055)
+
+%icon-skip-forward
+	@extend %iconfont
+	+icon-font(e056)
+
+%icon-shuffle
+	@extend %iconfont
+	+icon-font(e057)
+
+%icon-repeat
+	@extend %iconfont
+	+icon-font(e058)
+
+%icon-folder
+	@extend %iconfont
+	+icon-font(e059)
+
+%icon-umbrella
+	@extend %iconfont
+	+icon-font(e060)
+
+%icon-moon
+	@extend %iconfont
+	+icon-font(e061)
+
+%icon-thermometer
+	@extend %iconfont
+	+icon-font(e062)
+
+%icon-drop
+	@extend %iconfont
+	+icon-font(e063)
+
+%icon-sun
+	@extend %iconfont
+	+icon-font(e064)
+
+%icon-cloud
+	@extend %iconfont
+	+icon-font(e065)
+
+%icon-cloud-upload
+	@extend %iconfont
+	+icon-font(e066)
+
+%icon-cloud-download
+	@extend %iconfont
+	+icon-font(e067)
+
+%icon-upload
+	@extend %iconfont
+	+icon-font(e068)
+
+%icon-download
+	@extend %iconfont
+	+icon-font(e069)
+
+%icon-location
+	@extend %iconfont
+	+icon-font(e070)
+
+%icon-location-2
+	@extend %iconfont
+	+icon-font(e071)
+
+%icon-map
+	@extend %iconfont
+	+icon-font(e072)
+
+%icon-battery
+	@extend %iconfont
+	+icon-font(e073)
+
+%icon-head
+	@extend %iconfont
+	+icon-font(e074)
+
+%icon-briefcase
+	@extend %iconfont
+	+icon-font(e075)
+
+%icon-speech-bubble
+	@extend %iconfont
+	+icon-font(e076)
+
+%icon-anchor
+	@extend %iconfont
+	+icon-font(e077)
+
+%icon-globe
+	@extend %iconfont
+	+icon-font(e078)
+
+%icon-box
+	@extend %iconfont
+	+icon-font(e079)
+
+%icon-reload
+	@extend %iconfont
+	+icon-font(e080)
+
+%icon-share
+	@extend %iconfont
+	+icon-font(e081)
+
+%icon-marquee
+	@extend %iconfont
+	+icon-font(e082)
+
+%icon-marquee-plus
+	@extend %iconfont
+	+icon-font(e083)
+
+%icon-marquee-minus
+	@extend %iconfont
+	+icon-font(e084)
+
+%icon-tag
+	@extend %iconfont
+	+icon-font(e085)
+
+%icon-power
+	@extend %iconfont
+	+icon-font(e086)
+
+%icon-command
+	@extend %iconfont
+	+icon-font(e087)
+
+%icon-alt
+	@extend %iconfont
+	+icon-font(e088)
+
+%icon-esc
+	@extend %iconfont
+	+icon-font(e089)
+
+%icon-bar-graph
+	@extend %iconfont
+	+icon-font(e090)
+
+%icon-bar-graph-2
+	@extend %iconfont
+	+icon-font(e091)
+
+%icon-pie-graph
+	@extend %iconfont
+	+icon-font(e092)
+
+%icon-star
+	@extend %iconfont
+	+icon-font(e093)
+
+%icon-arrow-left
+	@extend %iconfont
+	+icon-font(e094)
+
+%icon-arrow-right
+	@extend %iconfont
+	+icon-font(e095)
+
+%icon-arrow-up
+	@extend %iconfont
+	+icon-font(e096)
+
+%icon-arrow-down
+	@extend %iconfont
+	+icon-font(e097)
+
+%icon-volume
+	@extend %iconfont
+	+icon-font(e098)
+
+%icon-mute
+	@extend %iconfont
+	+icon-font(e099)
+
+%icon-content-right
+	@extend %iconfont
+	+icon-font(e100)
+
+%icon-content-left
+	@extend %iconfont
+	+icon-font(e101)
+
+%icon-grid
+	@extend %iconfont
+	+icon-font(e102)
+
+%icon-grid-2
+	@extend %iconfont
+	+icon-font(e103)
+
+%icon-columns
+	@extend %iconfont
+	+icon-font(e104)
+
+%icon-loader
+	@extend %iconfont
+	+icon-font(e105)
+
+%icon-bag
+	@extend %iconfont
+	+icon-font(e106)
+
+%icon-ban
+	@extend %iconfont
+	+icon-font(e107)
+
+%icon-flag
+	@extend %iconfont
+	+icon-font(e108)
+
+%icon-trash
+	@extend %iconfont
+	+icon-font(e109)
+
+%icon-expand
+	@extend %iconfont
+	+icon-font(e110)
+
+%icon-contract
+	@extend %iconfont
+	+icon-font(e111)
+
+%icon-maximize
+	@extend %iconfont
+	+icon-font(e112)
+
+%icon-minimize
+	@extend %iconfont
+	+icon-font(e113)
+
+%icon-plus
+	@extend %iconfont
+	+icon-font(e114)
+
+%icon-minus
+	@extend %iconfont
+	+icon-font(e115)
+
+%icon-check
+	@extend %iconfont
+	+icon-font(e116)
+
+%icon-cross
+	@extend %iconfont
+	+icon-font(e117)
+
+%icon-move
+	@extend %iconfont
+	+icon-font(e118)
+
+%icon-delete
+	@extend %iconfont
+	+icon-font(e119)
+
+%icon-menu
+	@extend %iconfont
+	+icon-font(e120)
+
+%icon-archive
+	@extend %iconfont
+	+icon-font(e121)
+
+%icon-inbox
+	@extend %iconfont
+	+icon-font(e122)
+
+%icon-outbox
+	@extend %iconfont
+	+icon-font(e123)
+
+%icon-file
+	@extend %iconfont
+	+icon-font(e124)
+
+%icon-file-add
+	@extend %iconfont
+	+icon-font(e125)
+
+%icon-file-subtract
+	@extend %iconfont
+	+icon-font(e126)
+
+%icon-help
+	@extend %iconfont
+	+icon-font(e127)
+
+%icon-open
+	@extend %iconfont
+	+icon-font(e128)
+
+%icon-ellipsis
+	@extend %iconfont
+	+icon-font(e129)
+
+%icon-cash
+	@extend %iconfont
+	+icon-font(e600)
+
+%icon-harvest
+	@extend %iconfont
+	+icon-font(e601)
+
+%icon-invision
+	@extend %iconfont
+	+icon-font(e602)
+
+%icon-calendar
+	@extend %iconfont
+	+icon-font(e603)
+
+%icon-email
+	@extend %iconfont
+	+icon-font(e604)
+
+%icon-dropbox
+	@extend %iconfont
+	+icon-font(e605)
+
+%icon-plug
+	@extend %iconfont
+	+icon-font(e606)

@@ -1,0 +1,296 @@
+<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="34427zbda0inn2n"></script>
+<div class="controller">
+    <div class="container clearfix">
+        <div class="jobs-select">
+            <h1>{{job.title}}</h1>
+            <ul>
+                <li ng-repeat="(k,j) in jobs">
+                    <a href="javascript:;" ng-click="openJob(j)">{{j.title}}</a>
+                </li>
+            </ul>
+        </div>
+        <!--
+        <form name="qsearch" id="qsearch" autocomplete="off">
+            <fieldset>
+                <legend>Search</legend>
+                <input type="search" name="q" id="q" ng-model="query.q" ng-change="searchJob(query.q)"/>
+                <ul>
+                    <li ng-repeat="res in results">
+                        <a href="javascript:;" ng-click="openJob(res)">{{res.title}}</a>
+                    </li>
+                </ul>
+                <button type="submit">Search</button>
+            </fieldset>
+        </form>
+        -->
+        <ul class="job-manage">
+            <li class="share btn-ctrl"><span>Share</span></li>
+            <li class="settings btn-ctrl"><span>Settings</span>
+                <ul class="popover">
+                    <li class="edit"><a href="" ng-click="openWindow('edit')">Edit</a></li>
+                    <li class="integrations"><a href="" ng-click="openWindow('integrations')">Integrations</a></li>
+                    <li class="archive"><a href="" ng-click="openWindow('archive')">Archive</a></li>
+                    <li class="delete"><a href="" ng-click="openWindow('delete')">Delete</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="participants">
+            <li class="add-participant"><a href="javascript:;" ng-click="addParticipant()"><span>Add participant</span></a></li>
+            <li ng-if="participants.length" ng-repeat="(k,p) in participants" title="{{p.added_user}}">
+                <a href="javascript:;">
+                    <span class="name">
+                        {{p.added_user}}
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container clearfix">
+    <ul class="focus">
+        <li class="estimate">
+            <a href="">
+                <h2 class="title">Mobile app design</h2>
+                <span class="info">$8.000</span>
+                <span class="status waiting">Waiting</span>
+            </a>
+        </li>
+        <li class="calendar">
+            <a href="">
+                <h2 class="title">Meeting for briefing</h2>
+                <span class="info">25.03.2015 • 5:00 pm</span>
+                <span class="status going">Going</span>
+            </a>
+        </li>
+    </ul>
+    <div id="timeline">
+        <form id="composer" class="box">
+            <fieldset>
+                <legend>Add an item to the job</legend>
+                <textarea name="cinput" placeholder="Type something. Use @ to mention someone..." ng-keyup="searchParticipants(timeline.text)" ng-model="timeline.text" ng-focus="showOpts()"></textarea>
+                <div id="composer-">
+                    <ul>
+                        <li>
+                            <a href="">Attach file</a>
+                            <ul>
+                                <li><a href="" ng-click="openWindow('file')">From computer</a></li>
+                                <li><a href="" ng-click="openDropboxSharer()">Share from dropbox</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Create event</a></li>
+                        <li><a href="">Create estimate</a></li>
+                    </ul>
+                    <button type="submit" ng-click="addTimelinePost(timeline)" class="btn-add">Post</button>
+                </div>
+            </fieldset>
+            <fieldset ng-show="dropbox.length">
+                <p ng-show="readingDimensions == true">Reading dimensions...</p>
+                <div style="width:100%">
+                    <div style="width:25%;float:left;" ng-repeat="f in dropbox">
+                        <p ng-if="f.thumbnailLink">
+                            <a href="{{f.link}}" target="_blank"><img src="{{f.thumbnailLink}}"/></a>                            
+                        </p>
+                        <p ng-if="f.thumbnailLink == null">
+                            <a href="{{f.link}}" target="_blank">{{f.name}}</a>
+                        </p>
+                        <p>
+                            Name : {{f.name}}<br/>
+                            Size : {{f.bytes|bytesToKb }} KB
+                        </p>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <section ng-repeat="(k,t) in timelines" ng-init="type = getType(t)">
+            <div class="post {{cls}} {{type}}" ng-init="cls = 'email'" ng-if="type == 'text' || type == 'image' || type == 'file' || type == 'dropbox' || type == 'dropboxShared'">
+                <section class="title">
+                    <h3 ng-if="type == 'text'">
+                        <strong>{{getUser(t)}}</strong> posted on the timeline.
+                    </h3>
+                    <h3 ng-if="type == 'image'">
+                        <strong>{{getUser(t)}}</strong> uploaded an image on the timeline.
+                    </h3>
+                    <h3 ng-if="type == 'file'">
+                        <strong>{{getUser(t)}}</strong> uploaded a file on the timeline.
+                    </h3>
+                    <h3 ng-if="type == 'dropbox' && t.dropbox.file != undefined">
+                        <strong>{{getUser(t)}}</strong> uploaded a file to dropbox.
+                    </h3>
+                    <h3 ng-if="type == 'dropbox' && t.dropbox.image != undefined">
+                        <strong>{{getUser(t)}}</strong> uploaded an image to dropbox
+                    </h3>
+
+                    <h3 ng-if="type == 'dropboxShared' && t.dropboxShared != undefined">
+                        <strong>{{getUser(t)}}</strong> shared {{t.dropboxShared.length}} files in dropbox.
+                    </h3>
+
+                    <span class="datestamp">
+                        <a href="javascript:;">
+                            {{t.date_added|time_passed_ago}}
+                        </a>
+                    </span>
+                    <div class="more"><span>More actions</span>
+                        <ul class="popover">
+                            <li class="window">
+                                <a href="javascript:;" ng-click="openTextinWindow(t)">Open in a new window</a>
+                            </li>
+                            <li class="delete">
+                                <a href="javascript:;" ng-click="deleteTimelinePost(t)">Delete</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="content">
+                    <p ng-show="t.post != null">{{t.post}}</p>
+
+                    <p ng-if="type == 'image'">
+                        <img src="{{t.image|getImageUrl}}" class="thumbnail" />
+                    </p>
+
+                    <p ng-if="type == 'file'">
+                        <a href="{{t.file|getResourceUrl}}" target="_blank" class="thumbnail">{{t.file}}</a>
+                    </p>
+
+                    <p ng-if="type == 'dropbox' && t.dropbox.file != undefined">
+                        <a href="{{t.dropbox.file|getResourceUrl}}" target="_blank" class="thumbnail">{{t.dropbox.file}}</a>
+                    </p>
+
+                    <p ng-if="type == 'dropbox' && t.dropbox.image != undefined">
+                        <img src="{{t.dropbox.image|getImageUrl}}" class="thumbnail"/>
+                    </p>
+
+                    <div ng-if="type == 'dropboxShared' && t.dropboxShared != undefined" style="width:100%;">
+                        <div ng-repeat='d in t.dropboxShared'>
+                            <p ng-if="d.type == 'image'">
+                                <a href="{{d.link}}" target="_blank">
+                                    <img src="{{d.link}}" class="thumbnail"/>
+                                </a>
+                            </p>
+                            <p ng-if="d.type == 'file'">
+                                <a href="{{d.link}}" target="_blank">
+                                    {{ d.name}}
+                                </a>
+                            </p>
+                            <p>
+                                <span>Name : {{d.name}}</span><br/>
+                                <span>Size : {{d.bytes|bytesToKb}} KB</span><br ng-if="d.type == 'image'"/>
+                                <span ng-if="d.type == 'image'">Resolution : {{d.size.width}}x{{d.size.height}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <ul class="comments" ng-repeat="com in t.comments" ng-if="t.comments.length">
+                    <li>
+                        <img src="../images/participants/placeholder.png" />
+                        <p><span class="user"><a href="participant.html">{{com.user}}</a></span> {{com.comment}} <span class="timestamp"><a href="">{{com.date_added|time_passed_ago}}</a></span></p>
+                    </li>
+                </ul>
+
+                <form name="comment" class="comment" ng-submit="addComment(comment, k)">
+                    <fieldset>
+                        <legend>Leave a comment</legend>
+                        <input type="text" name="comminput" placeholder="Write a comment..." ng-model="comment.text"/>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script type="text/ng-template" id="timeline-pop.html">    
+    <div class="modal-header">
+    <h3 class="modal-title custom-font">Post: {{timeline.post}}</h3>
+    </div>
+    <div class="modal-body">
+    <p>Comments:</p>
+    <div ng-repeat="com in timeline.comments" ng-if="timeline.comments.length">
+    <p>
+    {{com.user}}, {{com.date_added|time_passed_ago}} said,
+    </p>
+    <p>
+    {{com.comment}}
+    </p>
+    <br/>
+    </div>
+    <div ng-if="timeline.comments.length == 0 || timeline.comments == null">
+    No Comments
+    </div>
+    </div>
+    <div class="modal-footer">
+    <button class="btn btn-default btn-border" ng-click="ok()">Done</button>
+    </div>
+</script>
+
+
+<script type="text/ng-template" id="job-edit.html">
+    <div class="modal-header">
+    <h3 class="modal-title custom-font">Edit job:</h3>
+    </div>
+    <div class="modal-body">
+    <form ng-submit="ok(job)">
+    <input ng-model="job.name" class="form-control" type="text" placeholder="Enter job title"/>
+    <span class="text-danger" ng-show="message != null">{{message}}</span>
+    </form>
+    </div>
+    <div class="modal-footer">
+    <button class="btn btn-default btn-border" ng-click="ok(job)">Save</button>
+    <button class="btn btn-default btn-border" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="job-delete.html">
+    <div class="modal-header">
+    <h3 class="modal-title custom-font">Delete {{job.title}}</h3>
+    </div>
+    <div class="modal-body">
+    <p>Are you sure you want to delete this job?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn btn-success btn-border" ng-click="yes(1)"><i class="fa fa-check"></i> Yes</button>
+    <button class="btn btn-danger btn-border" ng-click="cancel()"><i class="fa fa-remove"></i> No</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="job-archive.html">
+    <div class="modal-header">
+    <h3 class="modal-title custom-font">Archive {{job.title}}</h3>
+    </div>
+    <div class="modal-body">
+    <p>Are you sure you want to archive this job?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn btn-success btn-border" ng-click="yes(1)"><i class="fa fa-check"></i> Yes</button>
+    <button class="btn btn-danger btn-border" ng-click="cancel()"><i class="fa fa-remove"></i> No</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="job-file.html">
+    <div class="modal-header">
+    <h3 class="modal-title custom-font">Add a file</h3>
+    </div>
+    <div class="modal-body">
+    <input ui-jq="filestyle" type="file" class="filestyle" uploader="uploader" nv-file-select="">
+    <div>
+    <div ng-show="uploader.isHTML5" ng-thumb="{ file: uploader.queue[0]._file, height: 100 }"></div>
+    </div>
+    <!--<div ng-show="showDropboxOpts">
+    <input type="checkbox" ng-model="dropbox.upload" ng-change="dropboxUpload(dropbox.upload)"/> Upload to dropbox
+    <div ng-show="showAuthorize">
+    <p>Before you proceed, It is recommended that you authorize this app to interact with dropbox. For this development version, Authorization is required. Please do not process if you dont have an access token. This is required only once.</p>
+    <p>
+    <a href="javascript:;" ng-click="authorizeDropbox()">Authorize app</a>
+    </p>
+    </div>
+    </div>-->
+    </div>
+    <div class="modal-footer">
+    <button class="btn btn-success btn-border" ng-click="ok()" ng-disabled="disabled"><i class="fa fa-check"></i> Done</button>
+    <button class="btn btn-danger btn-border" ng-click="cancel()"><i class="fa fa-remove"></i> Cancel</button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="timeline-event.html">
+    
+</script>

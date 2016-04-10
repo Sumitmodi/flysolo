@@ -1,0 +1,238 @@
+#timeline .post
+    @extend %box
+    margin-bottom: 24px
+    padding: 0 !important
+    position: relative
+    &:before
+        position: absolute
+        width: 12px
+        height: 12px
+        display: inline-block
+        border: 2px solid $quintus-blue
+        background-color: #FFF
+        left: -44px
+        top: 30px
+        content: ""
+        +border-radius(90px)
+
+#timeline .post .title
+    border-bottom: 1px solid $quintus-blue
+    padding: 20px
+    box-sizing: border-box
+    display: block
+    position: relative
+    &:before
+        position: absolute
+        display: inline-block
+        border-bottom: 7px solid transparent
+        border-right: 7px solid #fff
+        border-top: 7px solid transparent
+        border-right-color: $quintus-blue
+        left: -8px
+        top: 32px
+        content: ''
+
+#timeline .post .title:after
+    position: absolute
+    display: inline-block
+    border-bottom: 6px solid transparent
+    border-right: 6px solid #fff
+    border-top: 6px solid transparent
+    left: -6px
+    top: 33px
+    content: ''
+
+#timeline .post .title h3
+    display: inline
+    line-height: 40px
+    font-weight: $light
+    color: $beta-blue
+
+#timeline .post .title h3 strong
+    font-weight: $regular
+    color: $prima-blue
+
+#timeline .title .datestamp a
+    @extend %smalltext
+
+#timeline .title .datestamp a:before
+    content: " \00B7"
+
+#timeline .content
+    padding: 20px
+    line-height: 24px
+
+#timeline .content h4
+    +font-size(18px)
+
+#timeline .post .title .more
+    float: right
+
+#timeline .post .title .more:hover
+    width: 200px
+    height: 30px
+
+#timeline .post .title .more:before
+    @extend %icon-ellipsis
+    color: $tertius-blue
+    line-height: 6px
+    font-size: 18px
+    width: 18px
+    height: 18px
+    float: right
+    text-align: right
+    cursor: pointer
+    +transition(.3s)
+
+#timeline .post .title .more:hover:before
+    color: $beta-blue
+
+#timeline .post .title .more span
+    display: none
+
+#timeline .post .title .more .popover
+    @extend %popover
+    right: 5px
+    top: 47px
+
+#timeline .post .title .more:hover .popover
+    display: inline
+
+#timeline .post .content .thumbnail
+    max-width: 220px
+
+#timeline .post.calendar .content .label
+    color: $prima-blue
+    font-weight: $regular
+    width: 60px
+    float: left
+
+#timeline .post.calendar ul.event-choice
+    float: right
+
+#timeline .post.calendar ul.event-choice li
+    display: inline
+
+#timeline .post.calendar ul.event-choice li a
+    border: 1px solid $quintus-blue
+    +border-radius(3px)
+    float: left
+    min-width: 88px
+    padding: 0 24px
+    text-align: center
+    line-height: 38px
+    +font-size(12px)
+    font-weight: $regular
+    color: $beta-blue
+    +transition(.3s)
+
+#timeline .post.calendar ul.event-choice li.yes a
+    +border-radius(3px 0px 0px 3px)
+    color: $green
+
+#timeline .post.calendar ul.event-choice li.maybe a
+    +border-radius(0px)
+    border-right: none
+    border-left: none
+
+#timeline .post.calendar ul.event-choice li.no a
+    +border-radius(0px 3px 3px 0px)
+    color: $red
+
+#timeline .post.calendar ul.event-choice li.yes a:hover
+    color: #fff
+    background-color: $green
+    border-color: $green
+
+#timeline .post.calendar ul.event-choice li.maybe a:hover
+    color: #fff
+    background-color: $beta-blue
+    border-color: $beta-blue
+
+#timeline .post.calendar ul.event-choice li.no a:hover
+    color: #fff
+    background-color: $red
+    border-color: $red
+
+#timeline .post.email .content .emailfrom
+    margin-top: 24px
+
+#timeline .post.email .content .emailfrom a
+    @extend %smalltext
+
+#timeline .post.calendar .title h3:before
+    @extend %posticon-timeline
+    @extend %icon-calendar
+    background-color: $calendar
+
+#timeline .post.dropbox .title h3:before
+    @extend %posticon-timeline
+    @extend %icon-dropbox
+    padding-top: 10px
+    background-color: $dropbox
+    font-size: 18px
+
+#timeline .post.email .title h3:before
+    @extend %posticon-timeline
+    @extend %icon-email
+    background-color: $email
+
+#timeline .post.estimate .title h3:before
+    @extend %posticon-timeline
+    @extend %icon-cash
+    background-color: $estimate
+
+#timeline .post.marvelapp .title h3:before
+    @extend %posticon-timeline
+    @extend %icon-marvel
+    background-color: $marvelapp
+
+#timeline .post.invision .title h3:before
+    @extend %posticon-timeline
+    @extend %icon-invision
+    background-color: $invision
+
+#timeline .post.harvest .title h3:before
+    @extend %posticon-timeline
+    @extend %icon-harvest
+    background-color: $harvest
+
+#timeline .post.note .title h3:before
+    @extend %posticon-timeline
+    @extend %icon-note
+    background-color: $note
+
+#timeline .post.file .title h3:before
+    @extend %posticon-timeline
+    @extend %icon-file
+    background-color: $file
+    
+#timeline .post.estimate .content .status
+    +font-size(12px)
+    padding: 0 16px
+    line-height: 32px
+    color: rgba(0, 0, 0, .4)
+    text-align: center
+    float: right
+    font-weight: $regular
+    margin-top: -6px
+    +border-radius(3px)
+
+#timeline .post.estimate .content .status.waiting
+    background-color: $waiting
+
+#timeline .post.estimate .content .status.approved
+    background-color: $approved
+
+#timeline .post.estimate .content .status.refused
+    background-color: $refused
+
+#timeline .post.estimate .content table
+    margin-top: 16px
+
+#timeline .post.externalurl .content img.preview
+    float: left
+    margin-right: 20px
+
+#timeline .post.externalurl .content .url
+    @extend %smalltext

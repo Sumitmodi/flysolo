@@ -1,0 +1,35 @@
+#integrations
+  @extend %modal
+
+#integrations .content
+  margin-top: -330px
+
+#integrations ul
+  max-height: 520px
+  overflow: auto
+
+#integrations ul li
+  margin-bottom: 24px
+  display: block
+  @extend %clearfix
+  &:last-child
+    margin-bottom: 0px
+
+#integrations ul li img
+  float: left
+  margin-right: 16px
+  width: 32px
+
+#integrations ul li span
+  float: left
+  width: 320px
+
+#integrations ul li span strong
+  display: block
+
+#integrations ul li.connect a
+  @extend %extgreen
+  width: 120px
+
+#integrations ul li.configure a
+  @extend %extwhite

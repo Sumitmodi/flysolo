@@ -1,0 +1,56 @@
+body
+  background-color: $sextus-blue
+  font-family: $basic-font-family
+  +font-size($basic-font-size)
+  font-weight: $basic-font-weight
+  line-height: $basic-font-height
+  color: $beta-blue
+
+a
+  text-decoration: none
+
+h1, h2, h3, h4, h5,
+h1 a, h2 a, h3 a, h4 a, h5 a
+  color: $prima-blue
+  font-weight: $All-title-weight
+
+h1, h1 a
+  font-size: $h1-title-size
+  font-weight: $h1-title-weight
+
+h2, h2 a
+  font-size: $h2-title-size
+
+::-webkit-input-placeholder
+  color: $tertius-blue
+
+\:-moz-placeholder
+  color: $tertius-blue
+
+::-moz-placeholder
+  color: $tertius-blue
+
+\:-ms-input-placeholder
+  color: $tertius-blue
+
+.container
+  max-width: 1280px
+  min-width: 1024px
+  margin: 0 auto
+  padding: 0 40px
+  position: relative
+
+.clearfix
+  @extend %clearfix
+
+//Partials
+@import header
+@import controller
+@import footer
+@import jobs
+@import timeline
+@import post
+@import focus
+@import comments
+@import integrations
+@import login

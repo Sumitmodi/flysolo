@@ -1,0 +1,60 @@
+//========================= base =========================
+
+%btn
+    +border-radius(4px)
+    color: $white
+    font-weight: $regular
+    +transition(.2s)
+    cursor: pointer
+    display: inline-block
+    text-align: center
+    +box-shadow(0 1px 2px rgba(0,0,0,.05))
+
+
+//========================= mixins =========================
+
+=btn-theme($bg-color, $lineheight, $padding, $fontsize)
+    @extend %btn
+    line-height: $lineheight
+    padding: $padding
+    font-size: $fontsize
+    background-color: $bg-color
+    &:hover
+        background-color: lighten($bg-color, 6%)
+    &:active
+        +box-shadow(inset 0 0.1em 0.17em darken($bg-color, 10%))
+        background-color: darken($bg-color, 3%)
+
+    
+//========================= themes =========================
+
+%extgreen
+    +btn-theme($green, 48px, 0px 24px, 14px)
+    font-weight: $thicker
+    border: 0
+
+%extwhite
+    +btn-theme($white, 30px, 0 12px, 12px)
+    color: $beta-blue
+    border: 1px solid $quintus-blue
+    &:hover
+        border-color: $tertius-blue
+
+    
+//========================= customs =========================
+
+.btn-add a
+	@extend %extgreen
+.btn-add a:before
+	@extend %icon-plus
+	font-size: 16px
+	color: #000
+	margin-right: 16px
+	+opacity(0.3)
+	float: left
+	margin-top: 15px
+
+.btn-ctrl
+    @extend %extwhite
+    font-weight: $light
+    text-transform: uppercase

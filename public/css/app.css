@@ -1,0 +1,1869 @@
+/* reset */
+/* line 65, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_reset.sass */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+textarea,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent; }
+
+/* line 75, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_reset.sass */
+ol,
+ul {
+  list-style: none; }
+
+/* line 78, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 96, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_reset.sass */
+div,
+header,
+ul,
+li,
+ol,
+a,
+span,
+form,
+input,
+textarea,
+button,
+fieldset,
+legend,
+a:before,
+::before {
+  box-sizing: border-box; }
+
+/* line 99, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_reset.sass */
+*:focus {
+  outline: 0; }
+
+@font-face {
+  font-family: "Flydings";
+  src: url("../fonts/Flydings.eot");
+  src: url("../fonts/Flydings.eot?#iefix") format("embedded-opentype"), url("../fonts/Flydings.woff") format("woff"), url("../fonts/Flydings.ttf") format("truetype"), url("../fonts/Flydings.svg#Flydings") format("svg"); }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat.eot");
+  src: url("../fonts/Montserrat.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat.woff") format("woff"), url("../fonts/Montserrat.ttf") format("truetype"), url("../fonts/Montserrat.svg#Montserrat") format("svg"); }
+
+/* line 3, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_grid.sass */
+.grid {
+  background: white;
+  margin: 0 0 20px 0; }
+
+/* line 9, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_grid.sass */
+[class*='col-'] {
+  float: left;
+  padding-right: 20px; }
+  /* line 12, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_grid.sass */
+  .grid [class*='col-']:last-of-type {
+    padding-right: 0; }
+
+/* line 15, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_grid.sass */
+.col-2-3 {
+  width: 66.66%; }
+
+/* line 18, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_grid.sass */
+.col-1-3 {
+  width: 33.33%; }
+
+/* line 21, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_grid.sass */
+.col-1-2 {
+  width: 50%; }
+
+/* line 24, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_grid.sass */
+.col-1-4 {
+  width: 25%; }
+
+/* line 27, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_grid.sass */
+.col-1-8 {
+  width: 12.5%; }
+
+/* Opt-in outside padding */
+/* line 31, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_grid.sass */
+.grid-pad {
+  padding: 20px 0 20px 20px; }
+  /* line 33, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_grid.sass */
+  .grid-pad [class*='col-']:last-of-type {
+    padding-right: 20px; }
+
+/* line 3, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/base/_base.sass */
+.grid:after, .clearfix, header .container, #integrations ul li {
+  *zoom: 1; }
+
+/* line 6, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/base/_base.sass */
+.clearfix:before,
+header .container:before,
+#integrations ul li:before,
+.grid:after, .clearfix:after, header .container:after, #integrations ul li:after {
+  content: "";
+  display: table; }
+
+/* line 9, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/base/_base.sass */
+.grid:after, .clearfix:after, header .container:after, #integrations ul li:after {
+  clear: both; }
+
+/* line 13, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/base/_base.sass */
+.controller div.jobs-select:hover, .jobs-list .job, #timeline #composer, #timeline .post, .focus li a, .form-access form {
+  background-color: #fff;
+  border: 1px solid #DAE3EA;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  padding: 20px; }
+
+/* line 21, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/base/_base.sass */
+.controller .participants li a img, .jobs-list .job .job-logo, .jobs-list .job .participants li a {
+  -webkit-border-radius: 90px;
+  -moz-border-radius: 90px;
+  -ms-border-radius: 90px;
+  border-radius: 90px;
+  width: 40px;
+  height: 40px;
+  background-color: #F7F9FA;
+  text-align: center;
+  font-weight: 400; }
+  /* line 28, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/base/_base.sass */
+  .controller .participants li a img:hover, .jobs-list .job .job-logo:hover, .jobs-list .job .participants li a:hover {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+
+/* line 33, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/base/_base.sass */
+.jobs-list .job .participants li a, #timeline .title .datestamp a, #timeline .post.email .content .emailfrom a, #timeline .post.externalurl .content .url, #timeline ul.comments li .timestamp a {
+  font-size: 12px;
+  font-weight: 300;
+  color: #A4B6C6; }
+
+/* line 3, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+#timeline .post.calendar .title h3:before, #timeline .post.dropbox .title h3:before, #timeline .post.email .title h3:before, #timeline .post.estimate .title h3:before, #timeline .post.marvelapp .title h3:before, #timeline .post.invision .title h3:before, #timeline .post.harvest .title h3:before, #timeline .post.note .title h3:before, #timeline .post.file .title h3:before, .focus li.estimate a:before, .focus li.calendar a:before {
+  font-family: "Flydings";
+  color: #fff;
+  float: left;
+  -webkit-border-radius: 90px;
+  -moz-border-radius: 90px;
+  -ms-border-radius: 90px;
+  border-radius: 90px;
+  text-align: center;
+  margin-right: 16px; }
+
+/* line 24, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+#timeline .post.calendar .title h3:before, #timeline .post.dropbox .title h3:before, #timeline .post.email .title h3:before, #timeline .post.estimate .title h3:before, #timeline .post.marvelapp .title h3:before, #timeline .post.invision .title h3:before, #timeline .post.harvest .title h3:before, #timeline .post.note .title h3:before, #timeline .post.file .title h3:before {
+  font-size: "Flydings";
+  width: 40px;
+  height: 40px;
+  padding-top: 12px; }
+
+/* line 26, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+.focus li.estimate a:before, .focus li.calendar a:before {
+  font-size: 13px;
+  width: 32px;
+  height: 32px;
+  padding-top: 9px; }
+
+/* line 32, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+.focus li.calendar .status:before, .form-access form button:before, .controller div.jobs-select h1:after, .jobs-list .job .action ul li.delete a:before, .btn-add a:before, .controller .participants li.add-participant a:before, .form-modal .modal-close:before, #integrations .modal-close:before, .jobs-list .job .action ul li.archive a:before, #timeline .post.file .title h3:before, .controller .job-manage > li.settings:before, #timeline .post .title .more:before, #timeline .post.estimate .title h3:before, .focus li.estimate a:before, #timeline .post.harvest .title h3:before, #timeline .post.invision .title h3:before, #timeline .post.calendar .title h3:before, .focus li.calendar a:before, #timeline .post.email .title h3:before, #timeline .post.dropbox .title h3:before {
+  font-family: "Flydings";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* line 212, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+.focus li.calendar .status:before {
+  content: "\e042"; }
+
+/* line 424, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+.form-access form button:before {
+  content: "\e095"; }
+
+/* line 432, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+.controller div.jobs-select h1:after {
+  content: "\e097"; }
+
+/* line 480, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+.jobs-list .job .action ul li.delete a:before {
+  content: "\e109"; }
+
+/* line 500, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+.btn-add a:before, .controller .participants li.add-participant a:before {
+  content: "\e114"; }
+
+/* line 512, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+.form-modal .modal-close:before, #integrations .modal-close:before {
+  content: "\e117"; }
+
+/* line 528, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+.jobs-list .job .action ul li.archive a:before {
+  content: "\e121"; }
+
+/* line 540, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+#timeline .post.file .title h3:before {
+  content: "\e124"; }
+
+/* line 560, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+.controller .job-manage > li.settings:before, #timeline .post .title .more:before {
+  content: "\e129"; }
+
+/* line 564, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+#timeline .post.estimate .title h3:before, .focus li.estimate a:before {
+  content: "\e600"; }
+
+/* line 568, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+#timeline .post.harvest .title h3:before {
+  content: "\e601"; }
+
+/* line 572, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+#timeline .post.invision .title h3:before {
+  content: "\e602"; }
+
+/* line 576, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+#timeline .post.calendar .title h3:before, .focus li.calendar a:before {
+  content: "\e603"; }
+
+/* line 580, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+#timeline .post.email .title h3:before {
+  content: "\e604"; }
+
+/* line 584, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/global/_icons.sass */
+#timeline .post.dropbox .title h3:before {
+  content: "\e605"; }
+
+/* line 3, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+.btn-add a, form button[type="submit"], #integrations ul li.connect a, .btn-ctrl, #integrations ul li.configure a, .form-access .social-login li a, .form-access .social-login li.google a {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-weight: 400;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); }
+
+/* line 31, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+.btn-add a, form button[type="submit"], #integrations ul li.connect a {
+  line-height: 48px;
+  padding: 0px 24px;
+  font-size: 14px;
+  background-color: #2ECC71;
+  font-weight: 500;
+  border: 0; }
+  /* line 22, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+  .btn-add a:hover, form button[type="submit"]:hover, #integrations ul li.connect a:hover {
+    background-color: #44d581; }
+  /* line 24, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+  .btn-add a:active, form button[type="submit"]:active, #integrations ul li.connect a:active {
+    -webkit-box-shadow: inset 0 0.1em 0.17em #25a25a;
+    -moz-box-shadow: inset 0 0.1em 0.17em #25a25a;
+    box-shadow: inset 0 0.1em 0.17em #25a25a;
+    background-color: #2bc06a; }
+
+/* line 36, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+.btn-ctrl, #integrations ul li.configure a {
+  line-height: 30px;
+  padding: 0 12px;
+  font-size: 12px;
+  background-color: #FFFFFF;
+  color: #707D90;
+  border: 1px solid #DAE3EA; }
+  /* line 22, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+  .btn-ctrl:hover, #integrations ul li.configure a:hover {
+    background-color: white; }
+  /* line 24, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+  .btn-ctrl:active, #integrations ul li.configure a:active {
+    -webkit-box-shadow: inset 0 0.1em 0.17em #e6e6e6;
+    -moz-box-shadow: inset 0 0.1em 0.17em #e6e6e6;
+    box-shadow: inset 0 0.1em 0.17em #e6e6e6;
+    background-color: #f7f7f7; }
+  /* line 40, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+  .btn-ctrl:hover, #integrations ul li.configure a:hover {
+    border-color: #A4B6C6; }
+
+/* line 48, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+.btn-add a:before {
+  font-size: 16px;
+  color: #000;
+  margin-right: 16px;
+  opacity: 0.3;
+  filter: alpha(opacity=30);
+  float: left;
+  margin-top: 15px; }
+
+/* line 57, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+.btn-ctrl {
+  font-weight: 300;
+  text-transform: uppercase; }
+
+/* line 3, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_form.sass */
+header #qsearch input, .controller #qsearch input, .form-modal input, .form-access form input, #timeline #composer textarea, #timeline form.comment textarea,
+#timeline form.comment input, #integrations form input {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #DAE3EA;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #21293F;
+  font-weight: 300;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  display: block;
+  resize: none; }
+  /* line 14, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_form.sass */
+  header #qsearch input:hover, .controller #qsearch input:hover, .form-modal input:hover, .form-access form input:hover, #timeline #composer textarea:hover, #timeline form.comment textarea:hover,
+  #timeline form.comment input:hover, #integrations form input:hover {
+    border-color: #C6D1DB; }
+  /* line 16, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_form.sass */
+  header #qsearch input:focus, .controller #qsearch input:focus, .form-modal input:focus, .form-access form input:focus, #timeline #composer textarea:focus, #timeline form.comment textarea:focus,
+  #timeline form.comment input:focus, #integrations form input:focus {
+    border-color: #2EC9FF; }
+
+/* line 31, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_form.sass */
+header #qsearch input, .controller #qsearch input {
+  width: 200px;
+  height: 42px;
+  padding: 0 20px 0 32px; }
+
+/* line 33, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_form.sass */
+.form-modal input, .form-access form input {
+  width: 100%;
+  height: 56px;
+  padding: 0 20px; }
+
+/* line 35, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_form.sass */
+#timeline #composer textarea, #timeline form.comment textarea,
+#timeline form.comment input {
+  width: 100%;
+  height: 40px;
+  padding: 10px; }
+
+/* line 44, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_form.sass */
+button, input, textarea {
+  font-family: "Montserrat";
+  -webkit-appearance: none; }
+
+/* line 48, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_form.sass */
+form button[type="submit"] {
+  float: right; }
+
+/* line 52, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_form.sass */
+form legend {
+  display: none; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_modal.sass */
+.form-modal, #integrations {
+  display: none; }
+
+/* line 4, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_modal.sass */
+.form-modal .white-shadow, #integrations .white-shadow {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: #fff;
+  opacity: 0.9;
+  z-index: 2; }
+
+/* line 14, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_modal.sass */
+.form-modal .modal-close, #integrations .modal-close {
+  cursor: pointer; }
+
+/* line 17, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_modal.sass */
+.form-modal .modal-close:before, #integrations .modal-close:before {
+  font-family: "Flydings";
+  font-size: 16px;
+  color: #A4B6C6;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer; }
+
+/* line 27, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_modal.sass */
+.form-modal .modal-dialog, #integrations .modal-dialog, .form-modal .content, #integrations .content {
+  background-color: #fff;
+  width: 600px;
+  padding: 40px;
+  position: absolute;
+  margin-top: -130px;
+  margin-left: -300px;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  border: 1px solid #C6D1DB;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.08); }
+
+/* line 41, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_modal.sass */
+.form-modal h3.modal-title, #integrations h3.modal-title {
+  font-size: 24px;
+  color: #21293F;
+  font-weight: 400;
+  margin-bottom: 24px; }
+
+/* line 47, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_modal.sass */
+.form-modal form input, #integrations form input {
+  width: 520px;
+  margin-bottom: 24px; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_popover.sass */
+header #menu-user ul, .controller .job-manage > li.settings .popover, #timeline #composer-action > ul > li ul.popover, #timeline .post .title .more .popover {
+  display: none;
+  position: absolute;
+  border: 1px solid #C6D1DB;
+  background-color: #FFF;
+  padding: 6px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.04);
+  -moz-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.04);
+  z-index: 3;
+  min-width: 180px; }
+
+/* line 27, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_popover.sass */
+header #menu-user ul li a, .controller .job-manage > li.settings .popover li a, #timeline #composer-action > ul > li ul.popover li a, #timeline .post .title .more .popover li a {
+  line-height: 40px;
+  padding: 0 20px !important;
+  font-size: 14px;
+  color: #707D90 !important;
+  display: block;
+  text-align: left;
+  font-weight: 300;
+  text-transform: initial;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+  margin: 0 0 6px 0 !important; }
+  /* line 39, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_popover.sass */
+  header #menu-user ul li a:hover, .controller .job-manage > li.settings .popover li a:hover, #timeline #composer-action > ul > li ul.popover li a:hover, #timeline .post .title .more .popover li a:hover {
+    background: #2EC9FF;
+    color: #FFFFFF !important; }
+
+/* line 43, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_popover.sass */
+header #menu-user ul li:last-child a, .controller .job-manage > li.settings .popover li:last-child a, #timeline #composer-action > ul > li ul.popover li:last-child a, #timeline .post .title .more .popover li:last-child a {
+  margin-bottom: 0px !important; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_table.sass */
+table {
+  width: 100%; }
+
+/* line 4, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_table.sass */
+table tr {
+  border-bottom: 4px solid #fff; }
+
+/* line 7, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_table.sass */
+table tr td {
+  background-color: #F7F9FA;
+  height: 40px;
+  padding: 0 16px;
+  font-weight: 400;
+  vertical-align: middle; }
+
+/* line 14, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_table.sass */
+table tr td span {
+  color: #21293F; }
+
+/* line 17, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_table.sass */
+table tr td.value {
+  text-align: right; }
+
+/* line 20, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_table.sass */
+table tfoot tr td {
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: 300;
+  color: #21293F;
+  text-align: right;
+  height: 40px; }
+
+/* line 28, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_table.sass */
+table tfoot tr td span {
+  font-weight: 400;
+  margin-right: 10px; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_layout.sass */
+body {
+  background-color: #F7F9FA;
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #707D90; }
+
+/* line 9, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_layout.sass */
+a {
+  text-decoration: none; }
+
+/* line 13, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_layout.sass */
+h1, h2, h3, h4, h5,
+h1 a, h2 a, h3 a, h4 a, h5 a {
+  color: #21293F;
+  font-weight: 400; }
+
+/* line 17, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_layout.sass */
+h1, h1 a {
+  font-size: 24px;
+  font-weight: 300; }
+
+/* line 21, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_layout.sass */
+h2, h2 a {
+  font-size: 18px; }
+
+/* line 24, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_layout.sass */
+::-webkit-input-placeholder {
+  color: #A4B6C6; }
+
+/* line 27, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_layout.sass */
+\:-moz-placeholder {
+  color: #A4B6C6; }
+
+/* line 30, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_layout.sass */
+::-moz-placeholder {
+  color: #A4B6C6; }
+
+/* line 33, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_layout.sass */
+\:-ms-input-placeholder {
+  color: #A4B6C6; }
+
+/* line 36, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_layout.sass */
+.container {
+  max-width: 1280px;
+  min-width: 1024px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header {
+  height: 70px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #DAE3EA; }
+
+/* line 9, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header #logo a {
+  width: 116px;
+  height: 20px;
+  background: url(../images/flysolo-logo.png) left top no-repeat;
+  background-size: 116px 20px;
+  float: left;
+  text-indent: -10001px;
+  margin-top: 25px; }
+
+/* line 18, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header #qsearch {
+  float: left;
+  display: inline-block;
+  margin-left: 40px; }
+
+/* line 24, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header #qsearch legend,
+header #qsearch button {
+  display: none; }
+
+/* line 27, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header #qsearch input {
+  background: #FFF url("../images/icons/-SVG/search.svg") 12px 12px no-repeat;
+  margin-top: 13px; }
+
+/* line 32, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header #qsearch input:focus {
+  width: 300px; }
+
+/* line 35, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header nav#menu {
+  float: right;
+  margin-top: 20px; }
+
+/* line 39, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header nav#menu ul li {
+  display: inline; }
+
+/* line 42, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header nav#menu ul li a {
+  color: #A4B6C6;
+  margin-left: 20px;
+  font-weight: 300;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
+/* line 48, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header nav#menu ul li strong a {
+  color: #2EC9FF;
+  font-weight: 500; }
+
+/* line 52, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header nav#menu ul li a:hover {
+  color: #21293F;
+  cursor: pointer; }
+
+/* line 56, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header nav#menu ul li.current a {
+  color: #21293F; }
+
+/* line 59, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header nav#menu ul li.alert {
+  position: relative; }
+
+/* line 62, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header nav#menu ul li.alert a:after {
+  content: ' ';
+  width: 6px;
+  height: 6px;
+  background-color: #FE4676;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  float: right;
+  margin-top: 4px;
+  position: absolute;
+  right: -8px; }
+
+/* line 73, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header #header-alerts {
+  display: inline-block;
+  margin-left: 20px; }
+
+/* line 77, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header #header-alerts a {
+  background: #FE4676;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  color: #FFFFFF !important;
+  font-size: 12px;
+  font-weight: bold !important;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding-top: 7px; }
+  /* line 88, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+  header #header-alerts a:hover {
+    background-color: #fe648d; }
+  /* line 90, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+  header #header-alerts a:active {
+    box-shadow: inset 0 0.1em 0.17em #fe1350;
+    background-color: #fe376b; }
+
+/* line 94, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header #menu-user {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-top: -5px;
+  float: right;
+  cursor: pointer;
+  background-color: rgba(112, 125, 144, 0.2);
+  -webkit-border-radius: 99px;
+  -moz-border-radius: 99px;
+  -ms-border-radius: 99px;
+  border-radius: 99px;
+  margin-left: 20px;
+  position: relative; }
+  /* line 105, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+  header #menu-user:before {
+    width: 40px;
+    height: 40px;
+    content: "";
+    float: right; }
+  /* line 110, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+  header #menu-user:hover:before {
+    height: 80px;
+    width: 70px; }
+  /* line 113, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+  header #menu-user:hover .popover {
+    display: inline; }
+
+/* line 116, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header #menu-user ul {
+  right: 0px;
+  top: 47px; }
+  /* line 120, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+  header #menu-user ul:before {
+    top: -8px;
+    right: 15px; }
+  /* line 123, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+  header #menu-user ul:after {
+    top: -6px;
+    right: 16px; }
+
+/* line 127, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_header.sass */
+header #menu-user ul li a {
+  margin: 0; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller {
+  background-color: #fff;
+  height: 96px;
+  margin-bottom: 40px;
+  box-shadow: inset 0 -1px 0 #DAE3EA, 0 2px 2px rgba(0, 0, 0, 0.04); }
+
+/* line 8, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller h1.page-title,
+.controller div.jobs-select {
+  float: left;
+  margin-top: 21px; }
+
+/* line 12, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller h1 {
+  line-height: 55px;
+  cursor: pointer; }
+
+/* line 16, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller div.jobs-select h1:after {
+  margin-left: 16px;
+  margin-top: 24px;
+  position: absolute;
+  font-size: 12px;
+  color: #A4B6C6; }
+
+/* line 24, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller div.jobs-select ul {
+  display: none; }
+
+/* line 27, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller div.jobs-select:hover {
+  position: absolute;
+  margin-top: 0;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+  width: 240px;
+  padding: 0px; }
+
+/* line 37, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller div.jobs-select:hover ul {
+  display: block; }
+
+/* line 40, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller div.jobs-select:hover h1 {
+  line-height: 55px;
+  padding-left: 19px;
+  -webkit-box-shadow: 0 1px 0 #DAE3EA;
+  -moz-box-shadow: 0 1px 0 #DAE3EA;
+  box-shadow: 0 1px 0 #DAE3EA;
+  background-color: #F7F9FA; }
+
+/* line 46, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller div.jobs-select ul li {
+  display: block; }
+
+/* line 49, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller div.jobs-select ul li a {
+  line-height: 50px;
+  padding: 0 16px;
+  display: block;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #707D90;
+  font-weight: 400;
+  -webkit-box-shadow: 0 1px 0 #DAE3EA;
+  -moz-box-shadow: 0 1px 0 #DAE3EA;
+  box-shadow: 0 1px 0 #DAE3EA; }
+
+/* line 58, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller div.jobs-select ul li a:hover {
+  color: #FE4676; }
+
+/* line 61, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller div.jobs-select ul li:last-child a {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none; }
+
+/* line 64, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller #qsearch {
+  float: left;
+  margin-left: 48px; }
+
+/* line 69, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller #qsearch legend,
+.controller #qsearch button {
+  display: none; }
+
+/* line 72, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller #qsearch input {
+  background: #FFF url("../images/icons/-SVG/search.svg") 16px 16px no-repeat;
+  margin-top: 24px; }
+
+/* line 77, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller #qsearch input:focus {
+  width: 300px; }
+
+/* line 80, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller #button-new-job a {
+  float: right;
+  margin-top: 24px; }
+
+/* line 84, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller .participants {
+  margin-top: 28px; }
+
+/* line 87, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller .participants li a {
+  width: 40px;
+  height: 40px;
+  float: right;
+  margin-left: 8px;
+  background-color: #F7F9FA;
+  -webkit-border-radius: 90px;
+  -moz-border-radius: 90px;
+  -ms-border-radius: 90px;
+  border-radius: 90px; }
+
+/* line 98, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller .participants li a span {
+  display: none; }
+
+/* line 101, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller .participants li.add-participant a {
+  background-color: #fff;
+  border: 2px solid #DAE3EA;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+  /* line 105, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+  .controller .participants li.add-participant a:hover {
+    border: 2px solid;
+    border-color: #25a25a;
+    background-color: #2ECC71; }
+  /* line 109, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+  .controller .participants li.add-participant a:before {
+    font-size: 14px;
+    color: #A4B6C6;
+    line-height: 36px;
+    margin-left: 11px;
+    text-align: center;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+  /* line 117, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+  .controller .participants li.add-participant a:hover:before {
+    color: #fff; }
+
+/* line 120, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller .job-manage {
+  float: right;
+  margin-top: 32px;
+  margin-left: 40px; }
+
+/* line 125, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller .job-manage > li {
+  float: left; }
+
+/* line 128, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller .job-manage > li.settings span {
+  display: none; }
+
+/* line 131, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller .job-manage > li.settings {
+  width: 42px;
+  height: 32px;
+  padding-top: 2px;
+  margin-left: 8px;
+  position: relative; }
+  /* line 137, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+  .controller .job-manage > li.settings:before {
+    font-size: 16px;
+    color: #A4B6C6;
+    float: right;
+    text-align: right;
+    line-height: 24px;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+  /* line 146, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+  .controller .job-manage > li.settings:hover:before {
+    height: 40px;
+    width: 70px; }
+  /* line 149, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+  .controller .job-manage > li.settings:hover .popover {
+    display: inline; }
+
+/* line 152, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller .job-manage > li:hover:before {
+  color: #707D90; }
+
+/* line 155, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+.controller .job-manage > li.settings .popover {
+  right: 0px;
+  top: 40px; }
+  /* line 159, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+  .controller .job-manage > li.settings .popover:before {
+    top: -8px;
+    right: 12px; }
+  /* line 162, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_controller.sass */
+  .controller .job-manage > li.settings .popover:after {
+    top: -6px;
+    right: 13px; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_footer.sass */
+footer ul {
+  display: none; }
+
+/* line 4, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_footer.sass */
+.love {
+  color: #FE4676;
+  font-size: 12px;
+  font-size: 0.75rem;
+  position: fixed;
+  bottom: 30px;
+  left: 40px; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job {
+  width: 282px;
+  height: 240px;
+  display: inline;
+  float: left;
+  margin-right: 24px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  position: relative; }
+
+/* line 12, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job:nth-child(4n+0) {
+  margin-right: 0px; }
+
+/* line 15, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .job-logo {
+  float: right; }
+
+/* line 19, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job h2 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: 500; }
+
+/* line 23, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .last-update {
+  color: #707D90;
+  font-size: 12px;
+  font-size: 0.75rem;
+  margin-top: 100px;
+  display: block; }
+
+/* line 29, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .last-update strong {
+  font-weight: 400; }
+
+/* line 32, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .participants li a {
+  width: 32px;
+  height: 32px;
+  float: left;
+  margin-top: 16px;
+  margin-right: 8px;
+  line-height: 32px; }
+
+/* line 42, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .action {
+  visibility: hidden;
+  position: absolute;
+  width: 282px;
+  height: 240px;
+  padding: 20px;
+  background-color: rgba(45, 54, 68, 0.9);
+  left: 0;
+  top: 0;
+  z-index: 2;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px; }
+
+/* line 54, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .action ul {
+  float: right; }
+
+/* line 57, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .action ul li {
+  display: inline;
+  opacity: 0.4;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 16px; }
+
+/* line 63, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .action ul li.archive a:before {
+  color: #fff; }
+
+/* line 67, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .action ul li.delete a:before {
+  color: #fff; }
+
+/* line 71, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .action ul li:hover {
+  opacity: 0.9; }
+
+/* line 74, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .action ul li a span {
+  display: none; }
+
+/* line 77, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .action a.open-job {
+  background-color: transparent;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 48px;
+  width: 122px;
+  display: block;
+  margin: 76px auto 0 auto;
+  padding: 0 24px;
+  border: 1px solid #fff;
+  text-align: center;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
+/* line 91, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job .action a.open-job:hover {
+  background-color: #2ECC71;
+  border-color: #2ECC71; }
+
+/* line 95, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_jobs.sass */
+.jobs-list .job:hover .action {
+  visibility: visible; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline {
+  width: 838px;
+  float: right;
+  border-left: 2px solid #DAE3EA;
+  height: 100%;
+  padding-left: 36px;
+  margin-top: -40px;
+  padding-top: 40px; }
+
+/* line 10, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer {
+  width: 800px;
+  margin-bottom: 24px;
+  padding: 0; }
+
+/* line 16, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer legend {
+  display: none; }
+
+/* line 19, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer textarea {
+  width: 100%;
+  padding: 20px;
+  height: auto;
+  border: none;
+  background: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  resize: none;
+  height: 60px; }
+
+/* line 30, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer button {
+  margin: 10px 10px 0 0;
+  line-height: 40px; }
+
+/* line 34, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer ::-webkit-input-placeholder {
+  font-size: 12px;
+  font-size: 0.75rem;
+  padding-top: 2px; }
+
+/* line 38, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer :-moz-placeholder {
+  font-size: 12px;
+  font-size: 0.75rem;
+  padding-top: 2px; }
+
+/* line 42, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer ::-moz-placeholder {
+  font-size: 12px;
+  font-size: 0.75rem;
+  padding-top: 2px; }
+
+/* line 46, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer :-ms-input-placeholder {
+  font-size: 12px;
+  font-size: 0.75rem;
+  padding-top: 2px; }
+
+/* line 50, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer-action {
+  background: #F7F9FA;
+  border-top: 1px solid #DAE3EA; }
+
+/* line 54, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer-action > ul > li {
+  float: left; }
+
+/* line 57, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer-action > ul > li > a {
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #A4B6C6;
+  font-size: 12px;
+  padding: 0 20px;
+  height: 60px;
+  border-right: 1px solid #DAE3EA;
+  display: inline-block;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s; }
+  /* line 67, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+  #timeline #composer-action > ul > li > a:hover {
+    background-color: #fafbfc; }
+  /* line 69, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+  #timeline #composer-action > ul > li > a:active {
+    -webkit-box-shadow: inset 0 0.1em 0.17em #d8e1e6;
+    -moz-box-shadow: inset 0 0.1em 0.17em #d8e1e6;
+    box-shadow: inset 0 0.1em 0.17em #d8e1e6;
+    background-color: #eef2f4; }
+
+/* line 73, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer-action > ul > li.attachfile {
+  position: relative; }
+  /* line 75, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+  #timeline #composer-action > ul > li.attachfile:hover:before {
+    height: 40px;
+    width: 70px; }
+  /* line 78, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+  #timeline #composer-action > ul > li.attachfile:hover .popover {
+    display: inline;
+    min-width: 200px; }
+
+/* line 82, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline #composer-action > ul > li ul.popover {
+  left: 10px;
+  top: 55px; }
+
+/* line 87, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_timeline.sass */
+#timeline .date-split {
+  color: #fff;
+  background-color: #21293F;
+  line-height: 32px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 0 16px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  margin: 16px auto 8px auto;
+  max-width: 96px; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post {
+  margin-bottom: 24px;
+  padding: 0 !important;
+  position: relative; }
+  /* line 6, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+  #timeline .post:before {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border: 2px solid #DAE3EA;
+    background-color: #FFF;
+    left: -44px;
+    top: 30px;
+    content: "";
+    -webkit-border-radius: 90px;
+    -moz-border-radius: 90px;
+    -ms-border-radius: 90px;
+    border-radius: 90px; }
+
+/* line 18, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .title {
+  border-bottom: 1px solid #DAE3EA;
+  padding: 20px;
+  box-sizing: border-box;
+  display: block;
+  position: relative; }
+  /* line 24, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+  #timeline .post .title:before {
+    position: absolute;
+    display: inline-block;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid #fff;
+    border-top: 7px solid transparent;
+    border-right-color: #DAE3EA;
+    left: -8px;
+    top: 32px;
+    content: ''; }
+
+/* line 35, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .title:after {
+  position: absolute;
+  display: inline-block;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid #fff;
+  border-top: 6px solid transparent;
+  left: -6px;
+  top: 33px;
+  content: ''; }
+
+/* line 45, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .title h3 {
+  display: inline;
+  line-height: 40px;
+  font-weight: 300;
+  color: #707D90; }
+
+/* line 51, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .title h3 strong {
+  font-weight: 400;
+  color: #21293F; }
+
+/* line 58, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .title .datestamp a:before {
+  content: " \00B7"; }
+
+/* line 61, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .content {
+  padding: 20px;
+  line-height: 24px; }
+
+/* line 65, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .content h4 {
+  font-size: 18px;
+  font-size: 1.125rem; }
+
+/* line 68, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .title .more {
+  float: right; }
+
+/* line 71, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .title .more:hover {
+  width: 200px;
+  height: 30px; }
+
+/* line 75, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .title .more:before {
+  color: #A4B6C6;
+  line-height: 6px;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  float: right;
+  text-align: right;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
+/* line 87, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .title .more:hover:before {
+  color: #707D90; }
+
+/* line 90, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .title .more span {
+  display: none; }
+
+/* line 93, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .title .more .popover {
+  right: 5px;
+  top: 47px; }
+
+/* line 98, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .title .more:hover .popover {
+  display: inline; }
+
+/* line 101, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post .content .thumbnail {
+  max-width: 220px; }
+
+/* line 104, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.calendar .content .label {
+  color: #21293F;
+  font-weight: 400;
+  width: 60px;
+  float: left; }
+
+/* line 110, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.calendar ul.event-choice {
+  float: right; }
+
+/* line 113, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.calendar ul.event-choice li {
+  display: inline; }
+
+/* line 116, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.calendar ul.event-choice li a {
+  border: 1px solid #DAE3EA;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  float: left;
+  min-width: 88px;
+  padding: 0 24px;
+  text-align: center;
+  line-height: 38px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #707D90;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
+/* line 129, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.calendar ul.event-choice li.yes a {
+  -webkit-border-radius: 3px 0px 0px 3px;
+  -moz-border-radius: 3px 0px 0px 3px;
+  -ms-border-radius: 3px 0px 0px 3px;
+  border-radius: 3px 0px 0px 3px;
+  color: #2ECC71; }
+
+/* line 133, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.calendar ul.event-choice li.maybe a {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  border-radius: 0px;
+  border-right: none;
+  border-left: none; }
+
+/* line 138, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.calendar ul.event-choice li.no a {
+  -webkit-border-radius: 0px 3px 3px 0px;
+  -moz-border-radius: 0px 3px 3px 0px;
+  -ms-border-radius: 0px 3px 3px 0px;
+  border-radius: 0px 3px 3px 0px;
+  color: #FF4B3B; }
+
+/* line 142, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.calendar ul.event-choice li.yes a:hover {
+  color: #fff;
+  background-color: #2ECC71;
+  border-color: #2ECC71; }
+
+/* line 147, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.calendar ul.event-choice li.maybe a:hover {
+  color: #fff;
+  background-color: #707D90;
+  border-color: #707D90; }
+
+/* line 152, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.calendar ul.event-choice li.no a:hover {
+  color: #fff;
+  background-color: #FF4B3B;
+  border-color: #FF4B3B; }
+
+/* line 157, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.email .content .emailfrom {
+  margin-top: 24px; }
+
+/* line 163, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.calendar .title h3:before {
+  background-color: #3175C0; }
+
+/* line 168, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.dropbox .title h3:before {
+  padding-top: 10px;
+  background-color: #3293DD;
+  font-size: 18px; }
+
+/* line 175, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.email .title h3:before {
+  background-color: #ED5628; }
+
+/* line 180, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.estimate .title h3:before {
+  background-color: #7ED321; }
+
+/* line 185, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.marvelapp .title h3:before {
+  background-color: #1991EB; }
+
+/* line 190, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.invision .title h3:before {
+  background-color: #FF2E63; }
+
+/* line 195, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.harvest .title h3:before {
+  background-color: #F77925; }
+
+/* line 200, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.note .title h3:before {
+  background-color: #EDB328; }
+
+/* line 205, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.file .title h3:before {
+  background-color: #465161; }
+
+/* line 210, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.estimate .content .status {
+  font-size: 12px;
+  font-size: 0.75rem;
+  padding: 0 16px;
+  line-height: 32px;
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  float: right;
+  font-weight: 400;
+  margin-top: -6px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+
+/* line 221, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.estimate .content .status.waiting {
+  background-color: #F5CE23; }
+
+/* line 224, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.estimate .content .status.approved {
+  background-color: #2ECC71; }
+
+/* line 227, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.estimate .content .status.refused {
+  background-color: #FF4B3B; }
+
+/* line 230, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.estimate .content table {
+  margin-top: 16px; }
+
+/* line 233, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_post.sass */
+#timeline .post.externalurl .content img.preview {
+  float: left;
+  margin-right: 20px; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_focus.sass */
+.focus {
+  width: 288px;
+  float: left; }
+
+/* line 5, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_focus.sass */
+.focus li a {
+  width: 288px;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+
+/* line 13, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_focus.sass */
+.focus li a:hover {
+  border: 1px solid #2EC9FF; }
+
+/* line 16, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_focus.sass */
+.focus li.estimate a:before {
+  background-color: #7ED321; }
+
+/* line 21, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_focus.sass */
+.focus li.calendar a:before {
+  background-color: #3175C0; }
+
+/* line 26, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_focus.sass */
+.focus li a .title {
+  display: block;
+  color: #21293F;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 0.875rem; }
+
+/* line 32, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_focus.sass */
+.focus li a .info {
+  color: #707D90; }
+
+/* line 35, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_focus.sass */
+.focus li.estimate .status {
+  width: 16px;
+  height: 16px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  text-indent: -10001px;
+  display: block;
+  right: 20px;
+  top: 28px;
+  position: absolute; }
+
+/* line 45, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_focus.sass */
+.focus li.estimate .status.waiting {
+  background-color: #F5CE23; }
+
+/* line 48, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_focus.sass */
+.focus li.calendar .status {
+  text-indent: -10001px;
+  float: right; }
+
+/* line 52, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_focus.sass */
+.focus li.calendar .status:before {
+  font-size: 18px;
+  color: #A4B6C6;
+  width: 18px;
+  height: 18px;
+  float: none;
+  text-indent: 0;
+  position: absolute;
+  right: 20px;
+  top: 28px; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline ul.comments {
+  border-top: 1px solid #DAE3EA; }
+
+/* line 4, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline ul.comments li {
+  display: block;
+  padding: 20px;
+  border-bottom: 1px solid #DAE3EA;
+  line-height: 20px; }
+
+/* line 10, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline ul.comments li:last-child {
+  border-bottom: none; }
+
+/* line 13, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline ul.comments li img {
+  float: left;
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+  -webkit-border-radius: 90px;
+  -moz-border-radius: 90px;
+  -ms-border-radius: 90px;
+  border-radius: 90px; }
+
+/* line 20, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline ul.comments li p {
+  display: block;
+  padding-left: 48px; }
+
+/* line 24, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline ul.comments li span.user a {
+  display: block;
+  font-weight: 400;
+  color: #21293F; }
+
+/* line 29, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline ul.comments li .timestamp a {
+  display: block; }
+
+/* line 33, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline form.comment {
+  display: block;
+  border-top: 1px solid #DAE3EA;
+  background-color: #F7F9FA;
+  padding: 20px; }
+
+/* line 39, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline form.comment legend {
+  display: none; }
+
+/* line 43, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline form.comment textarea,
+#timeline form.comment input {
+  border-width: 2px; }
+
+/* line 47, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline form.comment ::-webkit-input-placeholder {
+  padding-top: 2px;
+  font-size: 12px; }
+
+/* line 51, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline form.comment :-moz-placeholder {
+  padding-top: 2px;
+  font-size: 12px; }
+
+/* line 55, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline form.comment ::-moz-placeholder {
+  padding-top: 2px;
+  font-size: 12px; }
+
+/* line 59, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_comments.sass */
+#timeline form.comment :-ms-input-placeholder {
+  padding-top: 2px;
+  font-size: 12px; }
+
+/* line 4, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_integrations.sass */
+#integrations .content {
+  margin-top: -330px; }
+
+/* line 7, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_integrations.sass */
+#integrations ul {
+  max-height: 520px;
+  overflow: auto; }
+
+/* line 11, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_integrations.sass */
+#integrations ul li {
+  margin-bottom: 24px;
+  display: block; }
+  /* line 15, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_integrations.sass */
+  #integrations ul li:last-child {
+    margin-bottom: 0px; }
+
+/* line 18, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_integrations.sass */
+#integrations ul li img {
+  float: left;
+  margin-right: 16px;
+  width: 32px; }
+
+/* line 23, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_integrations.sass */
+#integrations ul li span {
+  float: left;
+  width: 320px; }
+
+/* line 27, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_integrations.sass */
+#integrations ul li span strong {
+  display: block; }
+
+/* line 30, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_integrations.sass */
+#integrations ul li.connect a {
+  width: 120px; }
+
+/* line 1, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.lonely-logo {
+  display: block;
+  margin: 170px 0 40px 0;
+  text-align: center; }
+
+/* line 6, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.lonely-logo a {
+  width: 174px;
+  height: 30px;
+  background: url(../images/flysolo-logo.png) left top no-repeat;
+  background-size: 174px 30px;
+  text-indent: -10001px;
+  display: inline-block; }
+
+/* line 14, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access {
+  width: 400px;
+  margin: 0 auto; }
+
+/* line 18, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access form {
+  padding: 40px; }
+
+/* line 22, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access form legend {
+  font-size: 24px;
+  color: #21293F;
+  font-weight: 400;
+  margin-bottom: 20px;
+  display: block; }
+
+/* line 29, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access form .description {
+  margin-bottom: 20px; }
+
+/* line 32, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access form input {
+  margin-top: 10px; }
+
+/* line 36, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access form .forgot a {
+  font-size: 12px;
+  float: right;
+  color: #2EC9FF;
+  margin: 10px 0 0 0; }
+
+/* line 42, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access form button {
+  float: none;
+  width: 100%;
+  margin-top: 20px;
+  position: relative; }
+  /* line 47, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+  .form-access form button:before {
+    font-size: 16px;
+    color: #FFF;
+    position: absolute;
+    right: 20px;
+    top: 15px; }
+
+/* line 55, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access .accountlink {
+  font-size: 12px;
+  margin-top: 10px;
+  text-align: center; }
+
+/* line 60, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access .accountlink a {
+  color: #2EC9FF; }
+
+/* line 63, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access .or {
+  margin: 20px 0;
+  text-align: center; }
+
+/* line 67, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access .social-login li a {
+  line-height: 48px;
+  padding: 0px 24px;
+  font-size: 14px;
+  background-color: #2EC9FF;
+  width: 100%; }
+  /* line 22, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+  .form-access .social-login li a:hover {
+    background-color: #4dd1ff; }
+  /* line 24, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+  .form-access .social-login li a:active {
+    -webkit-box-shadow: inset 0 0.1em 0.17em #00b9fa;
+    -moz-box-shadow: inset 0 0.1em 0.17em #00b9fa;
+    box-shadow: inset 0 0.1em 0.17em #00b9fa;
+    background-color: #1fc5ff; }
+
+/* line 71, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/layout/_login.sass */
+.form-access .social-login li.google a {
+  line-height: 48px;
+  padding: 0px 24px;
+  font-size: 14px;
+  background-color: #FE4676;
+  margin-top: 10px; }
+  /* line 22, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+  .form-access .social-login li.google a:hover {
+    background-color: #fe648d; }
+  /* line 24, /Users/cesarzeppini/Dropbox (Personal)/Products/FlySolo/Dev/flysolo-frontend/public/css/components/_buttons.sass */
+  .form-access .social-login li.google a:active {
+    -webkit-box-shadow: inset 0 0.1em 0.17em #fe1350;
+    -moz-box-shadow: inset 0 0.1em 0.17em #fe1350;
+    box-shadow: inset 0 0.1em 0.17em #fe1350;
+    background-color: #fe376b; }
+
+/*# sourceMappingURL=app.css.map */
+.placeholder-image{
+  max-width: 40px;
+}

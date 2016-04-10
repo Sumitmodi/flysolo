@@ -1,0 +1,29 @@
+<div id="form-register" class="form-access">
+    <div class="lonely-logo"><a href="http://www.flysolo.co">FlySolo</a></div>
+    <form ng-submit="register(user)">
+        <fieldset>
+            <legend>Sign up. It's free!</legend>
+            <p class="description">FlySolo is free, for now. Register and be one of our early adopter beta testers!</p>
+            <div ng-show="message.length">
+                <h4 class="text-danger">{{message}}</h4>
+            </div>
+            <label class="label">
+                <input class="form-control" type="text" ng-model="user.name" placeholder="Enter name" ng-required="true"/>
+            </label>
+            <label class="label">
+                <input class="form-control" type="text" ng-model="user.username" placeholder="Enter username" ng-blur="checkUsername(user.username)" ng-required="true"/>
+            </label>
+            <label class="label">
+                <input class="form-control" type="text" ng-model="user.email" placeholder="Enter email" ng-blur="checkEmail(user.email)" ng-required="true"/>
+            </label>
+            <label class="label">
+                <input class="form-control" type="password" ng-model="user.password_1" placeholder="Enter password" ng-required="true"/>
+            </label>
+            <label class="label">
+                <input class="form-control" type="password" ng-model="user.password_2" placeholder="Repeat password" ng-required="true"/>
+            </label>
+            <button type="submit">Sign up</button>
+        </fieldset>
+    </form>
+    <p class="accountlink">Already have an account? <a ui-sref="core.login">Get in</a></p>
+</div>

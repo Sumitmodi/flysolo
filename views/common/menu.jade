@@ -1,0 +1,26 @@
+header
+    div.container
+        div#logo
+            a(href='.') Flysolo
+        div#menu-user
+            div#user-photo
+            ul
+                li
+                    a(ui-sref='app.profile' ui-sref-active='active' href='javascript:;') Profile
+                li
+                    a(ui-sref='app.upgrade-plan' ui-sref-active='active' href='javascript:;') Upgrade plan
+                li
+                    a(ui-sref='app.logout' ui-sref-active='active' href='javascript:;') Logout
+        nav#menu
+            ul
+                li.current
+                    a(ui-sref='app') Jobs
+                li.alert
+                    a(ui-sref='app.activities' ui-sref-active='active' href='javascript:;') Activities
+                li
+                    a(ui-sref='app.people' ui-sref-active='active' href='javascript:;') People
+                li
+                    a(ui-sref='app.help' ui-sref-active='active' href='javascript:;') Help
+                li
+                    strong
+                        a(ui-sref='app.premium' ui-sref-active='active' href='javasript:;') Premium

@@ -1,0 +1,370 @@
+<div class="controller">
+    <div class="container clearfix">
+        <div class="jobs-select">
+            <h1>{{job.title}}</h1>
+            <ul>
+                <li ng-repeat="(k,j) in jobs">
+                    <a href="javascript:;" ng-click="openJob(j)">{{j.title}}</a>
+                </li>
+            </ul>
+        </div>
+
+        <form name="qsearch" id="qsearch" autocomplete="off">
+            <fieldset>
+                <legend>Search</legend>
+                <input type="search" name="q" id="q" ng-model="query.q" ng-change="searchJob(query.q)"/>
+                <ul>
+                    <li ng-repeat="res in results">
+                        <a href="javascript:;" ng-click="openJob(res)">{{res.title}}</a>
+                    </li>
+                </ul>
+                <button type="submit">Search</button>
+            </fieldset>
+        </form>
+
+        <ul class="job-manage">
+            <li class="integrations"><span>Integrations</span></li>
+            <li class="share"><span>Share</span></li>
+            <li class="settings"><span>Settings</span>
+                <ul class="popover">
+                    <li class="edit"><a href="">Edit</a></li>
+                    <li class="archive"><a href="">Archive</a></li>
+                    <li class="delete"><a href="">Delete</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="participants">
+            <li class="add-participant"><a href="participant-add.html"><span>Add participant</span></a></li>
+            <li><a href="participant.html"><img src="/images/participants/cesar.png" /> <span class="name">Cesar Zeppini</span></a></li>
+            <li><a href="participant.html"><img src="/images/participants/leandro.png" /> <span class="name">Leandro Pessini</span></a></li>
+            <li><a href="participant.html"><img src="/images/participants/jony.png" /> <span class="name">Jony Ive</span></a></li>
+            <li><a href="participant.html"><img src="/images/participants/ksenia.png" /> <span class="name">Ksenia Viksne</span></a></li>
+        </ul>
+    </div>
+</div>
+<div class="row clearfix">
+    <div class="col-md-2"></div>
+    <div class="col-md-2">
+        <ul class="focus">
+            <li class="estimate">
+                <a href="">
+                    <h2 class="title">Mobile app design</h2>
+                    <span class="info">$8.000</span>
+                    <span class="status waiting">Waiting</span>
+                </a>
+            </li>
+            <li class="calendar">
+                <a href="">
+                    <h2 class="title">Meeting for briefing</h2>
+                    <span class="info">25.03.2015 • 5:00 pm</span>
+                    <span class="status going">Going</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-7">
+        <div id="timeline">
+            <form name="composer" id="composer" class="box" method="post" action="">
+                <fieldset>
+                    <legend>Add an item to the job</legend>
+                    <textarea name="cinput" class="form-control" placeholder="Add something. Use @ to mention someone..."></textarea>
+                </fieldset>
+            </form>
+
+            <div class="post dropbox">
+                <section class="title">
+                    <h3><strong>You</strong> added <strong>1 new file</strong> in <a href="">Dropbox</a></h3>
+                    <span class="datestamp"><a href="">less than a minute ago</a></span>
+                    <div class="more"><span>More actions</span>
+                        <ul class="popover">
+                            <li class="window"><a href="">Open in a new window</a></li>
+                            <li class="delete"><a href="">Delete</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content">
+                    <ul class="images-list">
+                        <li><img src="/images/placeholder-image.png" /></li>
+                    </ul>
+                </section>
+
+                <ul class="comments">
+                    <li>
+                        <img src="/images/participants/cesar.png" />
+                        <p><span class="user"><a href="participant.html">Cesar Zeppini</a></span> What do you think? Is this something you believe would be the best for this project or not? What you think? <span class="timestamp"><a href="">8 min ago</a></span></p>
+                    </li>
+                    <li>
+                        <img src="/images/participants/jony.png" />
+                        <p><span class="user"><a href="participant.html">Jony Ive</a></span> Definitely yes. <span class="timestamp"><a href="">5 min ago</a></span></p>
+                    </li>
+                </ul>
+
+                <form name="comment" class="comment" action="" method="post">
+                    <fieldset>
+                        <legend>Leave a comment</legend>
+                        <textarea name="comminput" placeholder="Write a comment..."></textarea>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="post email">
+                <section class="title">
+                    <h3><strong>You</strong> received an <strong>email</strong> in <a href="">cesar@curiouspod.com</a></h3>
+                    <span class="datestamp"><a href="">2 hours ago</a></span>
+                    <div class="more"><span>More actions</span>
+                        <ul class="popover">
+                            <li class="window"><a href="">Open in a new window</a></li>
+                            <li class="delete"><a href="">Delete</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="content">
+                    <h4>The new contract</h4>
+                    <p>Hello, Jony. I just sent you the new contract. Please, revise it and send it back to me ok?</p>
+                    <p class="emailfrom"><a href="mailto:info@client.com">info@client.com</a></p>
+                </section>
+
+                <form name="comment" class="comment" action="" method="post">
+                    <fieldset>
+                        <legend>Leave a comment</legend>
+                        <textarea name="comminput" placeholder="Write a comment..."></textarea>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="post calendar">
+                <section class="title">
+                    <h3><strong>You</strong> was invited to an <strong>event</strong> by <strong>Leandro Pessini</strong></h3>
+                    <span class="datestamp"><a href="">3 days ago</a></span>
+                    <div class="more"><span>More actions</span>
+                        <ul class="popover">
+                            <li class="window"><a href="">Open in a new window</a></li>
+                            <li class="delete"><a href="">Delete</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content">
+                    <ul class="event-choice">
+                        <li class="yes"><a href="">Yes</a></li>
+                        <li class="maybe"><a href="">Maybe</a></li>
+                        <li class="no"><a href="">No</a></li>
+                    </ul>
+
+                    <h4>Meeting for Briefing</h4>
+                    <p class="datetime">Wed, 25 March 2015 • 5:00 pm</p>
+                    <p class="place"><span class="label">Where</span> Spicy Resto, Tallinn, Estonia</p>
+                    <p class="people"><span class="label">Who</span> Ksenia Viskne, Leandro Pessini, Cesar Zeppini</p>
+                </section>
+
+                <form name="comment" class="comment" action="" method="post">
+                    <fieldset>
+                        <legend>Leave a comment</legend>
+                        <textarea name="comminput" placeholder="Write a comment..."></textarea>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="post estimate">
+                <section class="title">
+                    <h3><strong>You</strong> sent an <strong>estimate</strong> to <strong>leandro@pessini.com</strong></h3>
+                    <span class="datestamp"><a href="">5 days ago</a></span>
+                    <div class="more"><span>More actions</span>
+                        <ul class="popover">
+                            <li class="window"><a href="">Open in a new window</a></li>
+                            <li class="delete"><a href="">Delete</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="content">
+                    <div class="status waiting">Waiting</div>
+                    <h4>Mobile app design</h4>
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td class="item">Design for iOS app</td>
+                            <td class="value">$4.500</td>
+                        </tr>
+                        <tr>
+                            <td class="item">Design for Android app</td>
+                            <td class="value">$3.500</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="2"><span>Deadline</span> 20 May 2015 | <span>Estimate Total</span> $8.000</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </section>
+
+                <form name="comment" class="comment" action="" method="post">
+                    <fieldset>
+                        <legend>Leave a comment</legend>
+                        <textarea name="comminput" placeholder="Write a comment..."></textarea>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="date-split">Last week</div>
+
+            <div class="post marvelapp externalurl">
+                <section class="title">
+                    <h3><strong>You</strong> shared a <strong>prototype</strong> from <strong>Marvel</strong></h3>
+                    <span class="datestamp"><a href="">8 days ago</a></span>
+                    <div class="more"><span>More actions</span>
+                        <ul class="popover">
+                            <li class="window"><a href="">Open in a new window</a></li>
+                            <li class="delete"><a href="">Delete</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="content clearfix">
+                    <a href="">
+                        <img src="/images/placeholder-image.png" class="preview" />
+                        <h4>Mobile app prototype</h4>
+                        <div class="url">http://marvl.in/eed9d</div>
+                    </a>
+                </section>
+
+                <form name="comment" class="comment" action="" method="post">
+                    <fieldset>
+                        <legend>Leave a comment</legend>
+                        <textarea name="comminput" placeholder="Write a comment..."></textarea>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="post invision externalurl">
+                <section class="title">
+                    <h3><strong>You</strong> shared a <strong>prototype</strong> from <strong>inVision</strong></h3>
+                    <span class="datestamp"><a href="">8 days ago</a></span>
+                    <div class="more"><span>More actions</span>
+                        <ul class="popover">
+                            <li class="window"><a href="">Open in a new window</a></li>
+                            <li class="delete"><a href="">Delete</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="content clearfix">
+                    <a href="">
+                        <img src="/images/placeholder-image.png" class="preview" />
+                        <h4>Web app prototype</h4>
+                        <div class="url">http://invis.io/RC2G8BC24</div>
+                    </a>
+                </section>
+
+                <form name="comment" class="comment" action="" method="post">
+                    <fieldset>
+                        <legend>Leave a comment</legend>
+                        <textarea name="comminput" placeholder="Write a comment..."></textarea>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="post harvest">
+                <section class="title">
+                    <h3><strong>You</strong> tracked time with <strong>Harvest</strong></h3>
+                    <span class="datestamp"><a href="">11 days ago</a></span>
+                    <div class="more"><span>More actions</span>
+                        <ul class="popover">
+                            <li class="window"><a href="">Open in a new window</a></li>
+                            <li class="delete"><a href="">Delete</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="content">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td class="item"><span>Mobile app iOS</span> for <span>Pipedrive Design</span></td>
+                            <td class="value">4:32 hrs</td>
+                        </tr>
+                        <tr>
+                            <td class="item"><span>Mobile app Android</span> for <span>Pipedrive Design</span></td>
+                            <td class="value">5:56 hrs</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="2"><span>Total Hours</span> 10:28 hrs</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </section>
+
+                <form name="comment" class="comment" action="" method="post">
+                    <fieldset>
+                        <legend>Leave a comment</legend>
+                        <textarea name="comminput" placeholder="Write a comment..."></textarea>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="participant-add" class="form-add">
+    <div class="white-shadow"></div>
+    <form name="form-add-participants" action="" method="post">
+        <div class="modal-close"></div>
+        <fieldset class="clearfix">
+            <legend>Invite people to this job</legend>
+            <input type="text" name="participant-email" placeholder="Search by name or enter email address to invite" />
+            <button type="submit">Send invitation</button>
+        </fieldset>
+    </form>
+</div>
+<div id="integrations">
+    <div class="white-shadow"></div>
+    <div class="content">
+        <div class="modal-close"></div>
+        <div class="title">Integrations</div>
+        <ul>
+            <li class="connect">
+                <img src="/images/integrations/dropbox.png" />
+                <span><strong>Dropbox</strong> Cloud file storage and syncing.</span>
+                <a href="integration.html">Connect</a>
+            </li>
+            <li class="configure">
+                <img src="/images/integrations/drive.png" />
+                <span><strong>Google Drive</strong> Online document and file storage.</span>
+                <a href="integration.html">Configure</a>
+            </li>
+            <li class="connect">
+                <img src="/images/integrations/gmail.png" />
+                <span><strong>Gmail</strong> Your email on your project.</span>
+                <a href="integration.html">Connect</a>
+            </li>
+            <li class="connect">
+                <img src="/images/integrations/calendar.png" />
+                <span><strong>Google Calendar</strong> Events from Google to your project.</span>
+                <a href="integration.html">Connect</a>
+            </li>
+            <li class="connect">
+                <img src="/images/integrations/harvest.png" />
+                <span><strong>Harvest</strong> Invoice and time-tracking.</span>
+                <a href="integration.html">Connect</a>
+            </li>
+            <li class="connect">
+                <img src="/images/integrations/marvel.png" />
+                <span><strong>Marvel App</strong> Web and mobile online prototyping.</span>
+                <a href="integration.html">Connect</a>
+            </li>
+            <li class="connect">
+                <img src="/images/integrations/invision.png" />
+                <span><strong>inVision</strong> Web and mobile online prototyping.</span>
+                <a href="integration.html">Connect</a>
+            </li>
+            <li class="connect">
+                <img src="/images/integrations/trello.png" />
+                <span><strong>Trello</strong> To-do lists and task management.</span>
+                <a href="integration.html">Connect</a>
+            </li>
+            <li class="connect">
+                <img src="/images/integrations/jira.png" />
+                <span><strong>JIRA</strong> Project and issue tracking software.</span>
+                <a href="integration.html">Connect</a>
+            </li>
+        </ul>
+    </div>
+</div>

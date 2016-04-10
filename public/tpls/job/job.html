@@ -1,0 +1,491 @@
+<script type="text/javascript" src="/js/dropbox.js" id="dropboxjs" data-app-key="34427zbda0inn2n"></script>
+<!--<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>-->
+<script src="/js/socket.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //start - EDIT JOB modal
+        /*$(".job-manage ul li.edit a").click(function () {
+            $("#job-form").fadeIn();
+            return false;
+        });
+        $("#job-form .modal-close, #job-form .white-shadow").click(function () {
+            $("#job-form").fadeOut();
+            $(".form-control").val("");
+            return false;
+        });
+        //end - EDIT JOB modal
+        
+        //start - CREATE EVENT modal
+        $(".btn-add-event a").click(function () {
+            $("#event-form").fadeIn();
+            return false;
+        });
+        $("#event-form .modal-close, #event-form .white-shadow").click(function () {
+            $("#event-form").fadeOut();
+            $(".form-control").val("");
+            return false;
+        });
+        //end - CREATE EVENT modal*/
+    });
+</script>
+<div class="controller">
+    <div class="container clearfix">
+        <div class="jobs-select">
+            <h1>{{job.title}}</h1>
+            <ul>
+                <li ng-repeat="(k,j) in jobs">
+                    <a href="javascript:;" ng-click="openJob(j)">{{j.title}}</a>
+                </li>
+            </ul>
+        </div>
+        <!--
+        <form name="qsearch" id="qsearch" autocomplete="off">
+            <fieldset>
+                <legend>Search</legend>
+                <input type="search" name="q" id="q" ng-model="query.q" ng-change="searchJob(query.q)"/>
+                <ul>
+                    <li ng-repeat="res in results">
+                        <a href="javascript:;" ng-click="openJob(res)">{{res.title}}</a>
+                    </li>
+                </ul>
+                <button type="submit">Search</button>
+            </fieldset>
+        </form>
+        -->
+        <ul class="job-manage">
+            <li class="share btn-ctrl"><span>Share</span></li>
+            <li class="settings btn-ctrl"><span>Settings</span>
+                <ul class="popover">
+                    <li class="edit"><a href="javascript:;" ng-click="openWindow('edit')">Edit</a></li>
+                    <li class="integrations"><a href="javascript:;" ng-click="openWindow('integrations')">Integrations</a></li>
+                    <li class="archive"><a href="javascript:;" ng-click="openWindow('archive')">Archive</a></li>
+                    <li class="delete"><a href="javascript:;" ng-click="openWindow('delete')">Delete</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="participants">
+            <li class="add-participant"><a href="javascript:;" ng-click="openWindow('participant')"><span>Add participant</span></a></li>
+            <li ng-if="participants.length" ng-repeat="(k,p) in participants" title="{{p.added_user}}">
+                <a href="javascript:;">
+                    <span class="name">
+                        {{p.added_user}}
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container clearfix">
+    <ul class="focus">
+        <li class="estimate">
+            <a href="">
+                <h2 class="title">Mobile app design</h2>
+                <span class="info">$8.000</span>
+                <span class="status waiting">Waiting</span>
+            </a>
+        </li>
+        <li class="calendar">
+            <a href="">
+                <h2 class="title">Meeting for briefing</h2>
+                <span class="info">25.03.2015 • 5:00 pm</span>
+                <span class="status going">Going</span>
+            </a>
+        </li>
+    </ul>
+    <div id="timeline">
+        <form id="composer">
+            <fieldset>
+                <legend>Add an item to the job</legend>
+                <textarea name="cinput" placeholder="Type something. Use @ to mention someone..." ng-keyup="searchParticipants(timeline.text)" ng-model="timeline.text"></textarea>
+                <div id="composer-action">
+                    <button type="submit" ng-click="addTimelinePost(timeline)" class="btn-add">Post</button>
+                    <ul class="clearfix">
+                        <li class="attachfile">
+                            <a href="">Attach file</a>
+                            <ul class="popover">
+                                <li><a href="javascript:;" ng-click="openWindow('file')">Computer</a></li>
+                                <li><a href="javascript:;" ng-click="openDropboxSharer()">Dropbox</a></li>
+                                <li><a href="javascript:;">Google Drive</a></li>
+                            </ul>
+                        </li>
+                        <li class="btn-add-event"><a href="javascript:;" ng-click="openWindow('event')">Create event</a></li>
+                        <li><a href="javascript:;" ng-click="openWindow('estimate')">Create estimate</a></li>
+                    </ul>
+                </div>
+            </fieldset>
+            <fieldset ng-show="dropbox.length">
+                <p ng-show="readingDimensions == true">Reading dimensions...</p>
+                <div style="width:100%">
+                    <div style="width:25%;float:left;" ng-repeat="f in dropbox">
+                        <p ng-if="f.thumbnailLink">
+                            <a href="{{f.link}}" target="_blank"><img src="{{f.thumbnailLink}}"/></a>                            
+                        </p>
+                        <p ng-if="f.thumbnailLink == null">
+                            <a href="{{f.link}}" target="_blank">{{f.name}}</a>
+                        </p>
+                        <p>
+                            Name : {{f.name}}<br/>
+                            Size : {{f.bytes|bytesToKb }} KB
+                        </p>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <section ng-repeat="(k,t) in timelines" ng-init="type = getType(t)">
+            <div class="post {{cls}} {{type}}" ng-init="cls = 'email'" ng-if="type == 'text' || type == 'image' || type == 'file' || type == 'dropbox' || type == 'dropboxShared' || type == 'event' || type == 'estimate' || type == 'email'">
+                <section class="title">
+                    <h3 ng-if="type == 'text'">
+                        <strong>{{getUser(t)}}</strong> posted on the timeline.
+                    </h3>
+
+                    <h3 ng-if="type == 'email' && isMeReceiver(t.email)" title="{{getSender(t.email, 'name')}}">
+                        <strong>{{getSender(t.email, 'address')}}</strong> sent you an email.
+                    </h3>
+
+                    <h3 ng-if="type == 'image'">
+                        <strong>{{getUser(t)}}</strong> uploaded an image on the timeline.
+                    </h3>
+                    <h3 ng-if="type == 'file'">
+                        <strong>{{getUser(t)}}</strong> uploaded a file on the timeline.
+                    </h3>
+                    <h3 ng-if="type == 'dropbox' && t.dropbox.file != undefined">
+                        <strong>{{getUser(t)}}</strong> uploaded a file to dropbox.
+                    </h3>
+                    <h3 ng-if="type == 'dropbox' && t.dropbox.image != undefined">
+                        <strong>{{getUser(t)}}</strong> uploaded an image to dropbox
+                    </h3>
+
+                    <h3 ng-if="type == 'dropboxShared' && t.dropboxShared != undefined">
+                        <strong>{{getUser(t)}}</strong> shared {{t.dropboxShared.length}} files in dropbox.
+                    </h3>
+
+                    <h3 ng-if="type == 'estimate' && t.estimate != undefined">
+                        <strong>{{getUser(t)}}</strong> added an estimate.
+                    </h3>
+
+                    <h3 ng-if="type == 'event' && t.event != undefined && invitationType != false" ng-init="initEventVars(t)">
+                        <span ng-if="invitationType == 'current_user'">
+                            You created an event: {{current_event.title}}
+                        </span>
+                        <span ng-if="invitationType == 'member'">
+                            {{getUserInfo('name')}} invited you to his event.
+                        </span>
+                    </h3>
+
+                    <span class="datestamp">
+                        <a href="javascript:;" ng-if="type != 'email'">
+                            {{t.date_added|time_passed_ago}}
+                        </a>
+                        <a href="javascript:;" ng-if="type == 'email'">
+                            {{t.email.date|time_passed_ago}}
+                        </a>
+                    </span>
+                    <div class="more"><span>More actions</span>
+                        <ul class="popover">
+                            <li class="window">
+                                <a href="javascript:;" ng-click="openTextinWindow(t)">Open in a new window</a>
+                            </li>
+                            <li class="delete">
+                                <a href="javascript:;" ng-click="deleteTimelinePost(t)">Delete</a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="content">
+                    <p ng-show="t.post != null" ng-bind-html="t.post | sanitize">{{t.post}}</p>
+
+                    <p ng-if="type == 'image'">
+                        <img src="{{t.image|getImageUrl}}" class="thumbnail" />
+                    </p>
+
+                    <p ng-if="type == 'file'">
+                        <a href="{{t.file|getResourceUrl}}" target="_blank" class="thumbnail">{{t.file}}</a>
+                    </p>
+
+                    <p ng-if="type == 'dropbox' && t.dropbox.file != undefined">
+                        <a href="{{t.dropbox.file|getResourceUrl}}" target="_blank" class="thumbnail">{{t.dropbox.file}}</a>
+                    </p>
+
+                    <p ng-if="type == 'dropbox' && t.dropbox.image != undefined">
+                        <img src="{{t.dropbox.image|getImageUrl}}" class="thumbnail"/>
+                    </p>
+
+                    <div ng-if="type == 'dropboxShared' && t.dropboxShared != undefined" style="width:100%;">
+                        <div ng-repeat='d in t.dropboxShared'>
+                            <p ng-if="d.type == 'image'">
+                                <a href="{{d.link}}" target="_blank">
+                                    <img src="{{d.link}}" class="thumbnail"/>
+                                </a>
+                            </p>
+                            <p ng-if="d.type == 'file'">
+                                <a href="{{d.link}}" target="_blank">
+                                    {{ d.name}}
+                                </a>
+                            </p>
+                            <p>
+                                <span>Name : {{d.name}}</span><br/>
+                                <span>Size : {{d.bytes|bytesToKb}} KB</span><br ng-if="d.type == 'image'"/>
+                                <span ng-if="d.type == 'image'">Resolution : {{d.size.width}}x{{d.size.height}}</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div ng-if="type == 'event'" style="width:100%">
+                        <div style="width: 70%;float:left;">
+                            <p ng-if="invitationType == 'member'">Event: {{current_event.title}}</p>
+                            <p>Starts: {{current_event.start.date}} {{current_event.start.time}}</p>
+                            <p>Ends: {{current_event.end.date}} {{current_event.end.time}}</p>
+                            <p>Venue: {{current_event.location}}</p>
+                            <p>Description: {{current_event.description}}</p>
+                        </div>
+                        <div style="width: 30%;float: left;">
+                            <a href="javascript:;" ng-click="recordEventAnswer(current_event,1)">Yes</a> |
+                            <a href="javascript:;" ng-click="recordEventAnswer(current_event,0)">May be</a> |
+                            <a href="javascript:;" ng-click="recordEventAnswer(current_event,-1)">No</a>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+
+                    <div ng-if="type == 'estimate'" style="width:100%">                        
+                        <p>Title: {{t.estimate.title}}</p>                    
+                        <p>Ends: {{t.estimate.deadline}}</p>
+                        <p ng-repeat="i in t.estimate.items">
+                            <b>Item:</b> {{i.item}} &nbsp;&nbsp; <b>Price:</b> {{i.value|number_format:2}}
+                        </p>
+                        <p>
+                            Estimate total : {{ getEstimateTotal(t.estimate.items) | number_format:2}}
+                        </p>
+                    </div>
+
+                    <div ng-if="type == 'email'" style="width:100%">
+                        <h1>{{t.email.subject | ucwords}}</h1>
+                        <div ng-bind-html="t.email.html|| t.email.text | sanitize"></div>
+                    </div>
+                </section>
+
+                <ul class="comments" ng-repeat="com in t.comments" ng-if="t.comments.length">
+                    <li>
+                        <img src="../images/participants/placeholder.png" />
+                        <p><span class="user"><a href="participant.html">{{com.user}}</a></span> {{com.comment}} <span class="timestamp"><a href="">{{com.date_added|time_passed_ago}}</a></span></p>
+                    </li>
+                </ul>
+
+                <form name="comment" class="comment" ng-submit="addComment(comment, k)">
+                    <fieldset>
+                        <legend>Leave a comment</legend>
+                        <input type="text" name="comminput" placeholder="Write a comment..." ng-model="comment.text"/>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script type="text/ng-template" id="timeline-pop.html">  
+    <div class="form-modal" id="job-add">
+    <div class="modal-header">
+    <h3 class="modal-title custom-font">Post: {{timeline.post}}</h3>
+    </div>
+    <div class="modal-body">
+    <p>Comments:</p>
+    <div ng-repeat="com in timeline.comments" ng-if="timeline.comments.length">
+    <p>
+    {{com.user}}, {{com.date_added|time_passed_ago}} said,
+    </p>
+    <p>
+    {{com.comment}}
+    </p>
+    <br/>
+    </div>
+    <div ng-if="timeline.comments.length == 0 || timeline.comments == null">
+    No Comments
+    </div>
+    </div>
+    <div class="modal-footer">
+    <button class="btn btn-default btn-border" ng-click="ok()">Done</button>
+    </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="job-edit.html">
+    <div id="job-form" class="form-modal">
+        <div class="white-shadow" ng-click="cancel()"></div>
+        <div class="modal-dialog">
+            <form ng-submit="ok(job)">
+                <fieldset class="clearfix">
+                    <legend>Rename job</legend>
+                    <div class="modal-header">
+                        <h3 class="modal-title">Rename job</h3>
+                        <div class="modal-close" ng-click="cancel()"></div>
+                    </div>
+                    <div class="modal-body">
+                        <input ng-model="job.name" class="form-control" type="text" placeholder="Job name"/>
+                        <span class="text-danger" ng-show="message != null">{{message}}</span>
+                    </div>
+                    <div class="modal-footer btn-add">
+                        <a href="javascript:;" ng-click="ok(job)">Rename job</a>
+                        <a href="javascript:;" ng-click="cancel()">Cancel</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="job-delete.html">
+    <div id="job-add" class="form-modal">
+        <div class="white-shadow" ng-click="cancel()"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-title custom-font">Delete {{job.title}}</h3>
+                <div class="modal-close" ng-click="cancel()"></div>
+            </div>
+            <div class="modal-body">
+                <h3 class="modal-title">Are you sure you want to delete this job?</h3>
+            </div>
+            <div class="modal-footer btn-add">
+                <a href="javascript:;" ng-click="yes(1)">Yes</a>
+                <a href="javascript:;" ng-click="cancel()">No</a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="job-archive.html">
+    <div id="job-add" class="form-modal">
+        <div class="white-shadow" ng-click="cancel()"></div>
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-title custom-font">Archive {{job.title}}</h3>
+                <div class="modal-close" ng-click="cancel()"></div>
+            </div>
+            <div class="modal-body">
+                <h3 class="modal-title">Are you sure you want to archive this job?</h3>
+            </div>
+            <div class="modal-footer btn-add">
+                <a href="javascript:;" ng-click="yes(1)">Yes</a>
+                <a href="javascript:;" ng-click="cancel()">No</a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="job-file.html">
+    <div id="job-add" class="form-modal">
+        <div class="white-shadow" ng-click="cancel()"></div>
+        <div class="modal-dialog">
+            <form>
+                <fieldset class="clearfix">
+                    <legend>Edit job</legend>
+                    <div class="modal-header">
+                        <h3 class="modal-title">Add a file</h3>
+                        <div class="modal-close" ng-click="cancel()"></div>
+                    </div>
+                    <div class="modal-body">
+                        <input ui-jq="filestyle" type="file" class="filestyle" uploader="uploader" nv-file-select="">
+                        <span class="text-danger" ng-show="message != null">{{message}}</span>
+                        <div ng-show="uploader.isHTML5" ng-thumb="{ file: uploader.queue[0]._file, height: 100 }"></div>
+                    </div>
+                    <div class="modal-footer btn-add">
+                        <a href="javascript:;" ng-click="ok()" ng-disabled="disabled">Done</a>
+                        <a href="javascript:;r" ng-click="cancel()">Cancel</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="timeline-event.html">
+    <div id="event-form" class="form-modal">
+        <div class="white-shadow" ng-click="cancel()"></div>
+        <div class="modal-dialog">
+            <form>
+                <fieldset class="clearfix">
+                    <legend>Create an event</legend>
+                    <div class="modal-header">
+                        <h3 class="modal-title">Create an event</h3>
+                        <div class="modal-close" ng-click="cancel()"></div>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="modal-title" ng-show="message != null">{{message}}</h3>
+                        <input type="text" ng-model="event.title" placeholder="Enter event title" ng-focus="emptyMessage()"/>
+                        <input type="text" ng-model="event.start.date" placeholder="Event start date" ng-focus="emptyMessage()"/>
+                        <input type="text" ng-model="event.start.time" placeholder="Event start time" ng-focus="emptyMessage()"/>
+                        <input type="text" ng-model="event.end.date" placeholder="Event end date" ng-focus="emptyMessage()"/>
+                        <input type="text" ng-model="event.end.time" placeholder="Event end time" ng-focus="emptyMessage()"/>
+                        <input type="text" ng-model="event.location" placeholder="Event location" ng-focus="emptyMessage()"/>
+
+                        <div class='form-add display-block'>
+                                <h3 class="modal-title">Invite people</h3>
+                                <input type="text" ng-model="invite" placeholder="Enter a user's email. Press enter to add" ng-keyup="searchParticipants(invite,$event)" ng-focus="emptyMessage()"/>
+                            <h3 class="modal-title" ng-repeat="u in event.users">{{u.email}}</h3>
+                        </div>
+                        <textarea ng-model='event.description' placeholder="Event description" class="event-description" ng-focus="emptyMessage()"></textarea>
+                    </div>
+                    <div class="modal-footer btn-add">
+                        <a href="javascript:;" ng-click="ok()" ng-disabled="disabled">Create event</a>
+                        <a href="javascript:;r" ng-click="cancel()">Cancel</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="timeline-estimate.html">
+    <div id="job-add" class="form-modal">
+        <div class="white-shadow" ng-click="cancel()"></div>
+        <div class="modal-dialog">
+            <form ng-submit="ok(job)">
+                <fieldset class="clearfix">
+                    <legend>Add an estimate</legend>
+                    <div class="modal-header">
+                        <h3 class="modal-title">Add an estimate</h3>
+                        <div class="modal-close" ng-click="cancel()"></div>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="modal-title" ng-show="message.length">>{{message}}</h3>
+                        <input type="text" ng-model="estimate.title" placeholder="Enter estimate title" ng-focus="emptyMessage()"/>
+                        <input type="text" ng-model="estimate.deadline" placeholder="Estimate deadline" ng-focus="emptyMessage()"/>
+                        <input type="text" ng-model="current.item" placeholder="Item"/>
+                        <input type="text" ng-model="current.value" placeholder="Estimate"/>
+                        <a href="javascript:;" ng-click="pushEstimate(current)">Add</a>
+                        <div ng-repeat="e in estimate.items track by $index">
+                            <input type="text" ng-model="e.item" placeholder="Item"/>
+                            <input type="text" ng-model="e.value" placeholder="Estimate"/>
+                        </div>
+                    </div>
+                    <div class="modal-footer btn-add">
+                        <a href="javascript:;" ng-click="ok()">Save</a>
+                        <a href="javascript:;" ng-click="cancel()">Cancel</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="add-participant.html">
+    <div id="job-add" class="form-modal">
+        <div class="white-shadow" ng-click="cancel()"></div>
+        <div class="modal-dialog">
+            <form ng-submit="ok(participant)">
+                <fieldset class="clearfix">
+                    <legend>Add a participant</legend>
+                    <div class="modal-header">
+                        <h3 class="modal-title">Add a participant</h3>
+                        <div class="modal-close" ng-click="cancel()"></div>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer btn-add">
+                        <a href="javascript:;" ng-click="ok()">Save</a>
+                        <a href="javascript:;" ng-click="cancel()">Cancel</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</script>

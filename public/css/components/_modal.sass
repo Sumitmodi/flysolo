@@ -1,0 +1,56 @@
+%modal
+  display: none
+
+%modal .white-shadow
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+  position: absolute
+  background-color: #fff
+  opacity: 0.9
+  z-index: 2
+
+%modal .modal-close
+  cursor: pointer
+
+%modal .modal-close:before
+  @extend %icon-cross
+  font-family: $icon-font-family
+  font-size: $icon-font-size
+  color: $tertius-blue
+  position: absolute
+  right: 20px
+  top: 20px
+  cursor: pointer
+
+%modal .modal-dialog, %modal .content
+  background-color: #fff
+  width: 600px
+  padding: 40px
+  position: absolute
+  margin-top: -130px
+  margin-left: -300px
+  top: 50%
+  left: 50%
+  z-index: 3
+  border: 1px solid $quartus-blue
+  +border-radius(4px)
+  +box-shadow(0 0 16px rgba(0, 0, 0, .08))
+
+%modal h3.modal-title
+  font-size: $h1-title-size
+  color: $prima-blue
+  font-weight: $regular
+  margin-bottom: 24px
+
+%modal form input
+  @extend %input
+  width: 520px
+  margin-bottom: 24px
+
+.form-modal
+  @extend %modal
+
+.form-modal input
+  @extend %in-modal

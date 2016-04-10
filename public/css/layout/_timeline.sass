@@ -1,0 +1,97 @@
+#timeline
+    width: 838px
+    float: right
+    border-left: 2px solid $quintus-blue
+    height: 100%
+    padding-left: 36px
+    margin-top: -40px
+    padding-top: 40px
+
+#timeline #composer
+    @extend %box
+    width: 800px
+    margin-bottom: 24px
+    padding: 0
+
+#timeline #composer legend
+    display: none
+
+#timeline #composer textarea
+    @extend %in-comment
+    width: 100%
+    padding: 20px
+    height: auto
+    border: none
+    background: transparent
+    +box-shadow(none)
+    resize: none
+    height: 60px
+
+#timeline #composer button
+    margin: 10px 10px 0 0
+    line-height: 40px
+
+#timeline #composer ::-webkit-input-placeholder
+    +font-size(12px)
+    padding-top: 2px
+
+#timeline #composer :-moz-placeholder
+    +font-size(12px)
+    padding-top: 2px
+
+#timeline #composer ::-moz-placeholder
+    +font-size(12px)
+    padding-top: 2px
+
+#timeline #composer :-ms-input-placeholder
+    +font-size(12px)
+    padding-top: 2px
+    
+#timeline #composer-action
+    background: $sextus-blue
+    border-top: 1px solid $quintus-blue
+
+#timeline #composer-action > ul > li
+    float: left
+
+#timeline #composer-action > ul > li > a
+    line-height: 60px
+    text-transform: uppercase
+    color: $tertius-blue
+    font-size: 12px
+    padding: 0 20px
+    height: 60px
+    border-right: 1px solid $quintus-blue
+    display: inline-block
+    +transition(.2s)
+    &:hover
+        background-color: lighten($sextus-blue, 1%)
+    &:active
+        +box-shadow(inset 0 0.1em 0.17em darken($sextus-blue, 10%))
+        background-color: darken($sextus-blue, 3%)
+
+#timeline #composer-action > ul > li.attachfile
+    position: relative
+    &:hover:before
+        height: 40px
+        width: 70px
+    &:hover .popover
+        display: inline
+        min-width: 200px
+        
+#timeline #composer-action > ul > li ul.popover
+    @extend %popover
+    left: 10px
+    top: 55px
+
+#timeline .date-split
+    color: #fff
+    background-color: $prima-blue
+    line-height: 32px
+    +font-size(12px)
+    font-weight: 400
+    text-align: center
+    padding: 0 16px
+    +border-radius(3px)
+    margin: 16px auto 8px auto
+    max-width: 96px

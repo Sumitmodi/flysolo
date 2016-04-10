@@ -1,0 +1,24 @@
+extends ../common/head
+block content
+    //script(type="text/javascript" src="/scripts/register.js")
+    div.col-md-12(ng-scope ng-controller="RegCtrl")
+        div.col-md-4
+        div.col-md-4
+            form.form-group(method="post" ng-submit="register(user)")
+                div.form-group
+                    label.col-md-3 Name
+                    input.form-control(name="name" ng-model="user.name" placeholder="Enter your name" ng-required="true")
+                div.form-group
+                    label.col-md-3 Username
+                    input.form-control(name="username" ng-model="user.username" placeholder="Enter username" ng-required="true" ng-change="checkUsername(user.username)" ng-blur="checkUsername(user.username)")
+                div.form-group
+                    label.col-md-3 Email
+                    input.form-control(name="email" ng-model="user.email" placeholder="Enter email" ng-required="true" ng-change="checkEmail(user.email)" ng-blur="checkEmail(user.email)")
+                div.form-group
+                    label.col-md-3 Password
+                    input.form-control(name="password_1" ng-model="user.password_1" placeholder="Enter password" ng-required="true")
+                div.form-group
+                    label.col-md-3 Re-Password
+                    input.form-control(name="password_2" ng-model="user.password_2" placeholder="Retype password" ng-required="true")
+                div.form-group
+                    button.btn.btn-success  Register

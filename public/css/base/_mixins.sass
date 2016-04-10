@@ -1,0 +1,48 @@
+//======================= vendors cross browser css =======================
+=border-radius($radius)
+    -webkit-border-radius: $radius
+    -moz-border-radius: $radius
+    -ms-border-radius: $radius
+    border-radius: $radius
+
+=box-shadow($value)
+    -webkit-box-shadow: $value
+    -moz-box-shadow: $value
+    box-shadow: $value
+
+=transition($args)
+    -webkit-transition: $args
+    -moz-transition: $args
+    -ms-transition: $args
+    -o-transition: $args
+    transition: $args
+
+=opacity($opacity)
+    opacity: $opacity
+    $opacity-ie: $opacity * 100
+    filter: alpha(opacity=$opacity-ie)
+
+=animation($str)
+    -webkit-animation: #{$str}
+    -moz-animation: #{$str}
+    -ms-animation: #{$str}
+    -o-animation: #{$str}
+    animation: #{$str}
+
+=box-sizing($boxvalue)
+    -webkit-box-sizing: $boxvalue
+    -moz-box-sizing: $boxvalue
+    box-sizing: $boxvalue
+
+//============================== RESPONSIVE ===============================
+
+@function calculateRem($size)
+    $remSize: $size / 16px
+    @return $remSize * 1rem
+
+=font-size($size)
+	font-size: $size
+	font-size: calculateRem($size)
+
+=icon-font($icon-code)
+	content: #{"\"\\"}#{$icon-code + "\""};

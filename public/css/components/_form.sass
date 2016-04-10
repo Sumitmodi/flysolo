@@ -1,0 +1,53 @@
+//========================= base =========================
+
+%input
+    +border-radius(4px)
+    background-color: #fff
+    border: 1px solid $quintus-blue
+    +transition(.2s)
+    +font-size($basic-font-size)
+    color: $prima-blue
+    font-weight: $basic-font-weight
+    +box-shadow(0 1px 2px rgba(0,0,0,.04))
+    display: block
+    resize: none
+    &:hover
+        border-color: $quartus-blue
+    &:focus
+        border-color: $blue
+
+
+//========================= mixins =========================
+
+=input-theme($inwidth, $inheight, $inpadding)
+    @extend %input
+    width: $inwidth
+    height: $inheight
+    padding: $inpadding
+    
+    
+//========================= theme =========================
+
+%in-search
+	+input-theme(200px, 42px, 0 20px 0 32px)
+%in-modal
+	+input-theme(100%, 56px, 0 20px)
+%in-composer, %in-comment
+    @extend %input
+    width: 100%
+    height: 40px
+    padding: 10px
+
+
+//========================= customs =========================
+
+button,input,textarea
+    font-family: $basic-font-family
+    -webkit-appearance: none
+
+form button[type="submit"]
+    @extend %extgreen
+    float: right
+    
+form legend
+    display: none

@@ -1,0 +1,61 @@
+#timeline ul.comments
+    border-top: 1px solid $quintus-blue
+
+#timeline ul.comments li
+    display: block
+    padding: 20px
+    border-bottom: 1px solid $quintus-blue
+    line-height: 20px
+
+#timeline ul.comments li:last-child
+    border-bottom: none
+
+#timeline ul.comments li img
+    float: left
+    margin-right: 16px
+    width: 32px
+    height: 32px
+    +border-radius(90px)
+
+#timeline ul.comments li p
+    display: block
+    padding-left: 48px
+
+#timeline ul.comments li span.user a
+    display: block
+    font-weight: $regular
+    color: $prima-blue
+
+#timeline ul.comments li .timestamp a
+    @extend %smalltext
+    display: block
+
+#timeline form.comment
+    display: block
+    border-top: 1px solid $quintus-blue
+    background-color: $sextus-blue
+    padding: 20px
+
+#timeline form.comment legend
+    display: none
+
+#timeline form.comment textarea,
+#timeline form.comment input
+    @extend %in-comment
+    border-width: 2px
+
+#timeline form.comment ::-webkit-input-placeholder
+    padding-top: 2px
+    font-size: 12px
+
+#timeline form.comment :-moz-placeholder
+    padding-top: 2px
+    font-size: 12px
+
+#timeline form.comment ::-moz-placeholder
+    padding-top: 2px
+    font-size: 12px
+
+#timeline form.comment :-ms-input-placeholder
+    padding-top: 2px
+    font-size: 12px
